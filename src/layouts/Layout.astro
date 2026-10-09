@@ -12,12 +12,19 @@ const { title, description = "TC Web & Studio — Top Digital Marketing, SEO, an
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`.replace(/\/\//g, '/')} />
 		<link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.ico`.replace(/\/\//g, '/')} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		
+		<!-- Mobile & Cross-Platform Capability -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="theme-color" content="#ffffff" />
 		
 		<!-- Preconnect & High-Performance Typography -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,11 +40,8 @@ const { title, description = "TC Web & Studio — Top Digital Marketing, SEO, an
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-
-		<!-- Theme Color -->
-		<meta name="theme-color" content="#ffffff" />
 	</head>
-	<body class="min-h-screen flex flex-col font-sans bg-white text-slate-800 antialiased selection:bg-orange-500/20 selection:text-orange-950">
+	<body class="min-h-screen flex flex-col font-sans bg-white text-slate-800 antialiased selection:bg-orange-500/20 selection:text-orange-950 pb-16 sm:pb-0 overflow-x-hidden">
 		<slot />
 	</body>
 </html>
