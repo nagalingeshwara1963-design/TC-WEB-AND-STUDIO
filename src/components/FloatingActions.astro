@@ -1,19 +1,108 @@
 ---
-// FloatingActions.astro — Floating WhatsApp & Mobile Sticky Action Bar (Clean Light Edition)
+// FloatingActions.astro — Interactive Founder WhatsApp Concierge & Mobile Sticky Action Bar
+const founders = [
+  {
+    name: "Naveen",
+    phone: "9742963370",
+    role: "Creative Director & 4K Video Reels",
+    avatar: "NV",
+    bg: "from-purple-500 to-indigo-500",
+    badge: "Films & Reels",
+    topic: "4K Commercial Video Shoots & Reels"
+  },
+  {
+    name: "Hemanth",
+    phone: "9741422544",
+    role: "Performance Ads & Growth Lead",
+    avatar: "HM",
+    bg: "from-orange-500 to-amber-500",
+    badge: "Ads & ROAS",
+    topic: "Meta & Google Paid Ad Campaigns"
+  },
+  {
+    name: "Nidhith",
+    phone: "8197974368",
+    role: "Lead Web Architect & Content",
+    avatar: "ND",
+    bg: "from-blue-500 to-cyan-500",
+    badge: "Web & Speed",
+    topic: "Custom Web Platform & Growth Strategy"
+  }
+];
 ---
 
-<!-- Floating WhatsApp Button (Desktop & Mobile) -->
-<aside aria-label="Quick contact actions" class="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center group">
-  <div class="hidden sm:block mr-3 bg-white text-slate-800 text-xs font-bold py-2 px-3.5 rounded-full shadow-lg border border-slate-200 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none font-sans">
-    Chat directly with Founders on WhatsApp
-  </div>
+<!-- Floating Interactive WhatsApp Concierge (Desktop & Mobile) -->
+<div class="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end font-sans">
   
-  <a 
-    href="https://wa.me/919876543210?text=Hi%20TC%20Web%20%26%20Studio%2C%20I%20would%20like%20to%20discuss%20a%20project." 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    class="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-xl hover:scale-105 transition-all"
-    aria-label="Chat with TC Web & Studio on WhatsApp"
+  <!-- Founder Selection Card Popover (Toggled on click) -->
+  <div 
+    id="founder-whatsapp-popover"
+    class="hidden mb-3 w-80 sm:w-88 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-200/90 p-4 transition-all duration-300 transform scale-95 opacity-0 origin-bottom-right"
+    role="dialog"
+    aria-label="Connect with TC Web & Studio Founders"
+  >
+    <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+      <div>
+        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 block">
+          Direct Founder WhatsApp
+        </span>
+        <h4 class="text-sm font-bold text-slate-900 font-display">
+          Choose Who to Message:
+        </h4>
+      </div>
+      <button 
+        type="button" 
+        id="close-wa-popover" 
+        class="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-900 flex items-center justify-center text-xs transition-colors cursor-pointer"
+        aria-label="Close WhatsApp options"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- 3 Founders WhatsApp Quick Links -->
+    <div class="space-y-2">
+      {founders.map(f => (
+        <a 
+          href={`https://wa.me/91${f.phone}?text=Hi%20${f.name}%2C%20I%20would%20like%20to%20discuss%20${encodeURIComponent(f.topic)}%20with%20TC%20Web%20%26%20Studio.`}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-2.5 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all group"
+        >
+          <div class="flex items-center gap-3">
+            <div class={`w-10 h-10 rounded-xl bg-gradient-to-br ${f.bg} text-white font-extrabold text-xs flex items-center justify-center font-display shadow-sm group-hover:scale-105 transition-transform`}>
+              {f.avatar}
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-xs font-bold text-slate-900 font-display group-hover:text-emerald-700 transition-colors">{f.name}</span>
+                <span class="text-[9px] font-mono font-semibold px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">{f.badge}</span>
+              </div>
+              <span class="text-[10px] text-slate-500 block">{f.role}</span>
+            </div>
+          </div>
+          <span class="w-8 h-8 rounded-full bg-emerald-500/10 group-hover:bg-emerald-500 text-emerald-600 group-hover:text-white flex items-center justify-center transition-all flex-shrink-0">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500 font-sans">
+      <span class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        Founders Direct • Under 15m reply
+      </span>
+      <span class="font-mono text-slate-400">Mysuru, IN</span>
+    </div>
+  </div>
+
+  <!-- Main Floating Button Trigger -->
+  <button 
+    type="button" 
+    id="toggle-wa-popover" 
+    class="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-all cursor-pointer focus:outline-none border-2 border-white/60"
+    aria-label="Open Founder WhatsApp Chat Menu"
   >
     <!-- Pulse ring -->
     <span class="absolute inset-0 rounded-full bg-emerald-400 opacity-60 animate-ping pointer-events-none" aria-hidden="true"></span>
@@ -21,19 +110,24 @@
     <svg class="w-6 h-6 sm:w-7 sm:h-7 relative z-10 fill-current" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
     </svg>
-  </a>
-</aside>
+
+    <!-- Notification pill -->
+    <span class="absolute -top-1.5 -left-1.5 bg-orange-600 text-white text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full border border-white shadow-sm">
+      3
+    </span>
+  </button>
+</div>
 
 <!-- Mobile Sticky Bottom Call-To-Action Dock -->
 <div class="fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] flex items-center gap-2.5 sm:hidden shadow-lg">
   <a 
-    href="tel:+919876543210" 
-    class="flex-1 btn-primary-agency text-xs py-2.5 px-2 text-center justify-center flex items-center gap-1.5"
+    href="tel:+919741422544" 
+    class="flex-1 btn-primary-agency text-xs py-2.5 px-2 text-center justify-center flex items-center gap-1.5 font-bold"
   >
     <svg class="w-3.5 h-3.5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
     </svg>
-    <span>Call Expert</span>
+    <span>Call Founders</span>
   </a>
 
   <button 
@@ -44,3 +138,53 @@
     <span class="text-xs">⚡</span>
   </button>
 </div>
+
+<script>
+  const toggleBtn = document.getElementById('toggle-wa-popover');
+  const popover = document.getElementById('founder-whatsapp-popover');
+  const closeBtn = document.getElementById('close-wa-popover');
+
+  function openPopover() {
+    if (popover) {
+      popover.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        popover.classList.remove('scale-95', 'opacity-0');
+        popover.classList.add('scale-100', 'opacity-100');
+      });
+    }
+  }
+
+  function closePopover() {
+    if (popover) {
+      popover.classList.remove('scale-100', 'opacity-100');
+      popover.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        popover.classList.add('hidden');
+      }, 250);
+    }
+  }
+
+  if (toggleBtn && popover) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (popover.classList.contains('hidden')) {
+        openPopover();
+      } else {
+        closePopover();
+      }
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closePopover();
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (popover && !popover.classList.contains('hidden') && !popover.contains(e.target as Node)) {
+      closePopover();
+    }
+  });
+</script>

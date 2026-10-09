@@ -111,7 +111,7 @@
                 id="modal-phone" 
                 name="phone" 
                 required 
-                placeholder="+91 98765 43210"
+                placeholder="+91 97414 22544"
                 class="w-full px-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition-all text-slate-900 placeholder-slate-400 font-sans"
               />
             </div>
@@ -174,12 +174,54 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </button>
+
+          <!-- Direct Founder Instant Chips -->
+          <div class="pt-3 border-t border-slate-100">
+            <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 text-center mb-2">
+              Or Message Founders Directly On WhatsApp:
+            </span>
+            <div class="grid grid-cols-3 gap-1.5">
+              <a 
+                href="https://wa.me/919742963370?text=Hi%20Naveen%2C%20I%20would%20like%20to%20discuss%20Video%20Production." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="p-1.5 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 text-[10px] font-bold text-center block transition-colors truncate"
+              >
+                NV: Naveen
+              </a>
+              <a 
+                href="https://wa.me/919741422544?text=Hi%20Hemanth%2C%20I%20would%20like%20to%20discuss%20Paid%20Ads." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="p-1.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 text-[10px] font-bold text-center block transition-colors truncate"
+              >
+                HM: Hemanth
+              </a>
+              <a 
+                href="https://wa.me/918197974368?text=Hi%20Nidhith%2C%20I%20would%20like%20to%20discuss%20Web%20Dev." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="p-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-[10px] font-bold text-center block transition-colors truncate"
+              >
+                ND: Nidhith
+              </a>
+            </div>
+          </div>
         </form>
 
         <!-- Success Notification -->
-        <div id="modal-audit-success" class="hidden mt-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center">
+        <div id="modal-audit-success" class="hidden mt-4 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center">
           <span class="font-bold block text-sm mb-1">Marketing Audit Scheduled!</span>
-          Our founders Naveen & Hemanth will review your digital marketing channels and share customized recommendations via WhatsApp within 24 hours.
+          <p class="mb-3">Opening WhatsApp with your dedicated founder lead for instant priority consultation...</p>
+          <a 
+            id="modal-wa-direct-btn"
+            href="https://wa.me/919741422544" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-whatsapp-pill py-2.5 px-4 text-xs font-bold text-white inline-flex shadow-sm"
+          >
+            <span>Continue on WhatsApp →</span>
+          </a>
         </div>
 
       </div>
@@ -191,8 +233,9 @@
 <script>
   const modal = document.getElementById('global-audit-modal');
   const closeBtn = document.getElementById('close-audit-modal');
-  const modalForm = document.getElementById('modal-audit-form');
+  const modalForm = document.getElementById('modal-audit-form') as HTMLFormElement | null;
   const modalSuccess = document.getElementById('modal-audit-success');
+  const modalWaDirect = document.getElementById('modal-wa-direct-btn') as HTMLAnchorElement | null;
 
   function openAuditModal() {
     if (modal) {
@@ -240,16 +283,43 @@
   if (modalForm && modalSuccess) {
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      const formData = new FormData(modalForm);
+      const name = (formData.get('name') as string) || '';
+      const phone = (formData.get('phone') as string) || '';
+      const goal = (formData.get('goal') as string) || 'lead-ads';
+      const budget = (formData.get('budget') as string) || '';
+      const website = (formData.get('website') as string) || '';
+
+      // Route by goal:
+      // social-video -> Naveen (9742963370)
+      // fast-web, seo-maps -> Nidhith (8197974368)
+      // lead-ads, 360-growth -> Hemanth (9741422544)
+      let targetPhone = "9741422544";
+      let founderName = "Hemanth";
+      if (goal === 'social-video') {
+        targetPhone = "9742963370";
+        founderName = "Naveen";
+      } else if (goal === 'fast-web' || goal === 'seo-maps') {
+        targetPhone = "8197974368";
+        founderName = "Nidhith";
+      }
+
+      const text = `Hi ${founderName}%20%26%20TC%20Web%20Studio%2C%20I%20requested%20a%20Digital%20Marketing%20Audit!%0A%0A*Name:*%20${encodeURIComponent(name)}%0A*Phone:*%20${encodeURIComponent(phone)}%0A*Goal:*%20${encodeURIComponent(goal)}%0A*Budget:*%20${encodeURIComponent(budget)}%0A*Website:*%20${encodeURIComponent(website || 'None provided')}`;
+      const waUrl = `https://wa.me/91${targetPhone}?text=${text}`;
+
+      if (modalWaDirect) {
+        modalWaDirect.href = waUrl;
+      }
+
       modalForm.classList.add('opacity-50', 'pointer-events-none');
+      
+      // Auto-open WhatsApp redirect
+      window.open(waUrl, '_blank');
+
       setTimeout(() => {
         modalForm.classList.add('hidden');
         modalSuccess.classList.remove('hidden');
-        setTimeout(() => {
-          closeAuditModal();
-          modalForm.reset();
-          modalForm.classList.remove('hidden', 'opacity-50', 'pointer-events-none');
-          modalSuccess.classList.add('hidden');
-        }, 2500);
       }, 500);
     });
   }
