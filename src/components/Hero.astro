@@ -1,0 +1,117 @@
+---
+import Section from './Section.astro';
+---
+
+<Section id="hero" class="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24 lg:pb-32 relative overflow-hidden" yPadding="none">
+  <!-- Subtle background grid/pattern for editorial feel -->
+  <div class="absolute inset-0 pointer-events-none opacity-5" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+    </svg>
+  </div>
+
+  <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    
+    <!-- Text Content -->
+    <div class="lg:col-span-7 flex flex-col items-start">
+      <div class="inline-flex items-center space-x-2 border border-brand-border rounded-full px-4 py-1.5 mb-8 md:mb-10 bg-white">
+        <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+        <span class="text-xs md:text-sm font-medium tracking-wide uppercase text-brand-text">Mysuru-based. Working across India.</span>
+      </div>
+      
+      <h1 class="h1 text-balance mb-6 md:mb-8 font-medium text-brand-text">
+        Your brand, <br class="hidden md:block"/>
+        <span class="text-brand-muted italic font-serif">with more to say.</span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-brand-muted max-w-[50ch] mb-10 md:mb-12 leading-relaxed">
+        Strategy, design, content, films and digital experiences&mdash;brought together to help businesses show up with clarity, consistency and character.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        <a 
+          href="#work" 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-brand-text hover:bg-brand-accent transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent focus-visible:ring-offset-brand-bg group"
+        >
+          Explore Our Work
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a 
+          href="#contact" 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-medium text-brand-text border border-brand-border bg-white hover:border-brand-accent hover:text-brand-accent transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent focus-visible:ring-offset-brand-bg"
+        >
+          Start a Project
+        </a>
+      </div>
+    </div>
+    
+    <!-- Abstract Visual Composition -->
+    <div class="lg:col-span-5 h-[400px] md:h-[500px] lg:h-[600px] w-full relative flex items-center justify-center lg:justify-end mt-12 lg:mt-0" aria-hidden="true">
+      <div class="relative w-full max-w-[400px] lg:max-w-[500px] aspect-[4/5]">
+        
+        <!-- Base Layer: Solid Color -->
+        <div class="absolute inset-0 bg-brand-border rounded-sm transform rotate-3 scale-[0.95] origin-bottom-right transition-transform hover:rotate-6 duration-700 ease-out"></div>
+        
+        <!-- Middle Layer: Image Placeholder / Abstract Block -->
+        <div class="absolute inset-0 bg-brand-text rounded-sm shadow-xl flex items-center justify-center overflow-hidden">
+           <!-- Temporary visual treatment replacing real images -->
+           <div class="w-[150%] h-[150%] bg-gradient-to-tr from-brand-accent/20 via-brand-text to-brand-text animate-spin-slow origin-center rounded-full opacity-50"></div>
+           <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-text/80"></div>
+           
+           <div class="absolute bottom-6 left-6 text-white/90">
+             <p class="text-xs uppercase tracking-widest font-semibold mb-1">Visual Study 01</p>
+             <p class="font-serif italic text-lg opacity-80">Connecting disciplines.</p>
+           </div>
+        </div>
+        
+        <!-- Top Floating Elements -->
+        <div class="absolute -top-6 -right-6 w-24 h-24 bg-white border border-brand-border rounded-full flex items-center justify-center shadow-lg animate-float">
+           <span class="text-brand-accent font-serif text-3xl">*</span>
+        </div>
+        
+        <div class="absolute -bottom-8 -left-8 w-32 h-16 bg-brand-accent text-white flex items-center justify-center rounded-sm shadow-lg animate-float-delayed">
+           <span class="text-xs uppercase tracking-widest font-semibold">T C &mdash; W & S</span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</Section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float, .animate-float-delayed, .animate-spin-slow {
+      animation: none;
+    }
+  }
+</style>

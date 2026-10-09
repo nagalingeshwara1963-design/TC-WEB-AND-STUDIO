@@ -1,0 +1,74 @@
+---
+// TrustedBrands.astro — Clean social proof strip with brand cards & capability marquee
+const clients = [
+  { name: "Jain Autocars", category: "Automotive Showroom", badge: "Local SEO & 4K Video", stat: "+140%", statLabel: "Buyer Inquiries", color: "text-orange-600 bg-orange-50 border-orange-200" },
+  { name: "Saaraswath IAS KAS Academy", category: "Civil Services Education", badge: "Astro Platform & SEO", stat: "Top 3", statLabel: "Google Rank", color: "text-blue-600 bg-blue-50 border-blue-200" },
+  { name: "Soulfull Academy", category: "Creative Arts", badge: "Visual Identity & Films", stat: "4K", statLabel: "Cinema Shoots", color: "text-purple-600 bg-purple-50 border-purple-200" },
+  { name: "Manikanta Farms", category: "Sustainable Agriculture", badge: "Video & Direct WhatsApp", stat: "+120%", statLabel: "Direct Orders", color: "text-emerald-600 bg-emerald-50 border-emerald-200" }
+];
+
+const marqueeItems = [
+  "Local Google SEO Domination",
+  "Astro 5 High-Speed Web Development",
+  "Google Maps 3-Pack Rankings",
+  "4K Commercial Videography",
+  "Conversion-Engineered Landing Pages",
+  "Social Media Growth Funnels",
+  "Direct WhatsApp Lead Capture",
+  "Core Web Vitals 100/100",
+];
+---
+
+<section class="py-14 bg-white border-b border-slate-200/80 overflow-hidden" id="brands">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Label -->
+    <div class="text-center mb-8">
+      <span class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 font-display text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-slate-200">
+        Trusted by Ambitious Karnataka Businesses
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-2">
+        Brands We Have Propelled with Measurable Growth
+      </h2>
+    </div>
+
+    <!-- Client Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      {clients.map(client => (
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/90 hover:border-slate-300 rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">
+                {client.category}
+              </span>
+              <span class={`text-xs font-bold font-mono px-2 py-0.5 rounded-full border ${client.color}`}>
+                {client.stat}
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 font-display leading-snug">
+              {client.name}
+            </h3>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+            <span>{client.badge}</span>
+            <span class="text-slate-700 font-bold">{client.statLabel}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+  <!-- Smooth Capability Marquee -->
+  <div class="border-t border-slate-200/80 bg-slate-50 py-3.5 overflow-hidden">
+    <div class="animate-marquee flex items-center gap-8 whitespace-nowrap">
+      {marqueeItems.concat(marqueeItems).map(item => (
+        <div class="inline-flex items-center gap-2.5 text-xs font-bold text-slate-700 uppercase tracking-wider font-display">
+          <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+          <span>{item}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

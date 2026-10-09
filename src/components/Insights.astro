@@ -1,0 +1,38 @@
+---
+import Section from './Section.astro';
+---
+
+<Section class="bg-white">
+  <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div class="max-w-2xl">
+      <h2 class="h2 text-brand-text mb-6">Insights & Thinking</h2>
+      <p>
+        Perspectives on strategy, design, and digital culture from our studio.
+      </p>
+    </div>
+  </div>
+
+  <!-- Editorial Introduction / Coming Soon State -->
+  <div class="w-full bg-[#F7F6F2] border border-brand-border p-8 md:p-16 flex flex-col items-center justify-center text-center rounded-sm">
+    <div class="w-16 h-16 border-t-2 border-l-2 border-brand-accent rounded-full animate-spin-slow mb-8 opacity-50" aria-hidden="true"></div>
+    <h3 class="text-2xl font-serif italic text-brand-text mb-4">Curating our thoughts...</h3>
+    <p class="text-brand-muted max-w-md mx-auto text-sm md:text-base">
+      We are currently documenting our processes, case studies, and industry perspectives. Full articles and insights will be published here soon.
+    </p>
+  </div>
+</Section>
+
+<style>
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-spin-slow {
+      animation: none;
+    }
+  }
+</style>

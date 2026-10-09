@@ -1,0 +1,229 @@
+---
+// AuditModal.astro — Free Website & SEO Audit Modal (Clean Light Edition)
+---
+
+<div 
+  id="global-audit-modal" 
+  class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-slate-900/70 backdrop-blur-md transition-all duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="audit-modal-title"
+>
+  <!-- Modal Dialog Container -->
+  <div class="relative w-full max-w-2xl bg-white text-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-200 transition-all">
+    
+    <!-- Close Button -->
+    <button 
+      type="button" 
+      id="close-audit-modal"
+      class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-all focus:outline-none border border-slate-200 cursor-pointer"
+      aria-label="Close modal"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <div class="grid grid-cols-1 md:grid-cols-12">
+      
+      <!-- Modal Left Accent Panel (Desktop - Deep Navy Theme) -->
+      <div class="hidden md:flex md:col-span-5 bg-[#0f172a] text-white p-8 flex-col justify-between relative overflow-hidden">
+        <div class="relative z-10">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#ea580c] to-[#f97316] text-white font-extrabold flex items-center justify-center text-lg mb-6 shadow-md font-display">
+            TC
+          </div>
+          <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-orange-400 block mb-1">
+            Free Review
+          </span>
+          <h3 class="text-xl font-bold tracking-tight mb-3 font-display text-white">
+            Complimentary Growth Audit
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-6 font-sans">
+            Get an actionable assessment of your website speed, local Google Maps ranking gaps, and high-intent keyword opportunities.
+          </p>
+
+          <ul class="space-y-3 text-xs text-slate-300 font-medium">
+            <li class="flex items-center gap-2.5">
+              <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">✓</span>
+              <span>Google Maps 3-Pack Gap Analysis</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">✓</span>
+              <span>Core Web Vitals & Speed Audit</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">✓</span>
+              <span>Actionable 90-Day Roadmap Deck</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative z-10 pt-6 border-t border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Founder Reviewed • Zero Sales Pressure</span>
+        </div>
+      </div>
+
+      <!-- Modal Right Form Panel -->
+      <div class="md:col-span-7 p-6 sm:p-8 bg-white">
+        <div class="mb-5">
+          <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-orange-600 bg-orange-50 border border-orange-200 px-2.5 py-0.5 rounded-full inline-block mb-1.5">
+            24-Hour Delivery
+          </span>
+          <h2 id="audit-modal-title" class="text-2xl font-bold text-slate-900 tracking-tight font-display">
+            Request Your Free Audit
+          </h2>
+          <p class="text-xs text-slate-500 mt-1 font-sans">
+            Submit your details and our founders will analyze your business digital presence today.
+          </p>
+        </div>
+
+        <form id="modal-audit-form" class="space-y-3.5">
+          <div>
+            <label for="modal-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1 font-display">
+              Your Name *
+            </label>
+            <input 
+              type="text" 
+              id="modal-name" 
+              name="name" 
+              required 
+              placeholder="e.g. Anand Kumar"
+              class="w-full px-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition-all text-slate-900 placeholder-slate-400 font-sans"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="modal-phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1 font-display">
+                Phone / WhatsApp *
+              </label>
+              <input 
+                type="tel" 
+                id="modal-phone" 
+                name="phone" 
+                required 
+                placeholder="+91 98765 43210"
+                class="w-full px-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition-all text-slate-900 placeholder-slate-400 font-sans"
+              />
+            </div>
+
+            <div>
+              <label for="modal-goal" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1 font-display">
+                Focus Area
+              </label>
+              <select 
+                id="modal-goal" 
+                name="goal"
+                class="w-full px-3 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all text-slate-800 font-sans cursor-pointer"
+              >
+                <option value="seo">Local Google SEO & Maps</option>
+                <option value="web">Ultra-Fast Astro Website</option>
+                <option value="video">4K Reels & Commercials</option>
+                <option value="full">Full 360° Growth Sprint</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="modal-website" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1 font-display">
+              Website or Google Business Profile <span class="text-slate-400 font-normal lowercase">(optional)</span>
+            </label>
+            <input 
+              type="text" 
+              id="modal-website" 
+              name="website" 
+              placeholder="e.g. https://mybrand.com"
+              class="w-full px-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none transition-all text-slate-900 placeholder-slate-400 font-sans"
+            />
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full btn-cta-orange py-3.5 px-4 text-xs font-bold tracking-wide mt-2 justify-center shadow-md cursor-pointer"
+          >
+            <span>Submit for Free Audit</span>
+            <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Success Notification -->
+        <div id="modal-audit-success" class="hidden mt-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center">
+          <span class="font-bold block text-sm mb-1">Audit Scheduled!</span>
+          Our founders will review your web presence and share insights via WhatsApp within 24 hours.
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('global-audit-modal');
+  const closeBtn = document.getElementById('close-audit-modal');
+  const modalForm = document.getElementById('modal-audit-form');
+  const modalSuccess = document.getElementById('modal-audit-success');
+
+  function openAuditModal() {
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('modal-open');
+    }
+  }
+
+  function closeAuditModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('modal-open');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.trigger-audit-modal').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openAuditModal();
+      });
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeAuditModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeAuditModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeAuditModal();
+    }
+  });
+
+  if (modalForm && modalSuccess) {
+    modalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modalForm.classList.add('opacity-50', 'pointer-events-none');
+      setTimeout(() => {
+        modalForm.classList.add('hidden');
+        modalSuccess.classList.remove('hidden');
+        setTimeout(() => {
+          closeAuditModal();
+          modalForm.reset();
+          modalForm.classList.remove('hidden', 'opacity-50', 'pointer-events-none');
+          modalSuccess.classList.add('hidden');
+        }, 2500);
+      }, 500);
+    });
+  }
+</script>

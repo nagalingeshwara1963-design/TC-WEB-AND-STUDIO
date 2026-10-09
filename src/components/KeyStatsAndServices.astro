@@ -1,0 +1,146 @@
+---
+// KeyStatsAndServices.astro — 6 Core Digital Marketing & Development Services
+const services = [
+  {
+    id: "seo",
+    title: "Search Engine Optimization (SEO)",
+    desc: "Dominate Google Search and local Maps to capture ready-to-buy customers searching in Mysuru and Karnataka.",
+    icon: "🔍",
+    iconBg: "bg-orange-50 text-orange-600 border-orange-200",
+    features: ["Local Mysuru Google 3-Pack", "High-Intent Keyword Strategy", "Technical Core Web Vitals", "Monthly Lead Reports"],
+    href: "#seo"
+  },
+  {
+    id: "web-development",
+    title: "Custom High-Speed Web Development",
+    desc: "Lightning-fast, bespoke websites built with modern Astro architecture. Designed to convert visitors into WhatsApp inquiries.",
+    icon: "⚡",
+    iconBg: "bg-blue-50 text-blue-600 border-blue-200",
+    features: ["0.3s Mobile Load Times", "Touch-Optimized Responsive UI", "Direct WhatsApp & CRM Ingestion", "100/100 Lighthouse Performance"],
+    href: "#web-development"
+  },
+  {
+    id: "social-media",
+    title: "4K Commercial Video & Reels",
+    desc: "In-house cinematic video shoots, drone walkthroughs, and viral social reels directed by Lead Filmmaker Naveen.",
+    icon: "🎥",
+    iconBg: "bg-purple-50 text-purple-600 border-purple-200",
+    features: ["Ultra HD 4K Cinema Gear", "Viral 9:16 Reel Storyboarding", "Founder & Brand Documentaries", "Scriptwriting & Voiceover"],
+    href: "#social-media"
+  },
+  {
+    id: "maps",
+    title: "Google Business Profile & Map Pack",
+    desc: "Transform your Google Maps listing into an inbound customer magnet with systematic 5-star reviews and geo-targeted optimization.",
+    icon: "📍",
+    iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200",
+    features: ["Google Maps 3-Pack Rankings", "Review Generation Workflows", "Geo-Tagged Photo Updates", "Direct Phone Call Tracking"],
+    href: "#seo"
+  },
+  {
+    id: "ads",
+    title: "Paid Google & Social Ad Campaigns",
+    desc: "Laser-targeted pay-per-click advertising engineered for positive ROI and immediate customer acquisition without ad spend waste.",
+    icon: "📈",
+    iconBg: "bg-amber-50 text-amber-600 border-amber-200",
+    features: ["Google Search Ads (PPC)", "Meta & Instagram Lead Ads", "High-Converting Ad Copy", "Transparent Cost-Per-Lead Tracking"],
+    href: "#seo"
+  },
+  {
+    id: "brand",
+    title: "Brand Identity & Creative Direction",
+    desc: "Bespoke logos, visual systems, and promotional posters that establish undeniable credibility and premium market perception.",
+    icon: "🎨",
+    iconBg: "bg-rose-50 text-rose-600 border-rose-200",
+    features: ["Distinct Visual Identity Systems", "Marketing Posters & Banners", "Brand Messaging Guidelines", "Social Media Templates"],
+    href: "#social-media"
+  }
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#f8fafc] border-b border-slate-200/80" id="services">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header (Inspired by Authority Agency Structure) -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-3 font-display">
+        Full-Stack Digital Growth
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 font-display leading-tight">
+        Comprehensive Digital Solutions Designed to <span class="text-gradient-orange">Win Customers</span>
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-sans">
+        We integrate technical search engine optimization, ultra-fast website infrastructure, and cinematic 4K brand visuals to turn casual browsers into confirmed inquiries.
+      </p>
+    </div>
+
+    <!-- 6 Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {services.map(svc => (
+        <div class="card-light p-7 sm:p-8 flex flex-col justify-between group">
+          <div>
+            <!-- Icon & Quick Badge -->
+            <div class="flex items-center justify-between mb-5">
+              <div class={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl border ${svc.iconBg} shadow-sm group-hover:scale-105 transition-transform`}>
+                {svc.icon}
+              </div>
+              <a href={svc.href} class="text-xs font-bold text-slate-400 group-hover:text-blue-600 flex items-center gap-1 transition-colors font-display">
+                <span>Learn Details</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3 font-display leading-snug">
+              {svc.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-slate-600 text-sm leading-relaxed mb-6 font-sans">
+              {svc.desc}
+            </p>
+
+            <!-- Feature Bullets -->
+            <ul class="space-y-2 mb-6 pt-4 border-t border-slate-100 text-xs text-slate-700 font-medium">
+              {svc.features.map(feat => (
+                <li class="flex items-center gap-2">
+                  <span class="text-emerald-600 font-bold">✓</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Bottom Button -->
+          <div class="pt-2">
+            <button 
+              type="button" 
+              class="w-full py-2.5 px-4 rounded-xl border border-slate-200 hover:border-blue-500 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 font-bold text-xs transition-all flex items-center justify-center gap-1 trigger-audit-modal cursor-pointer font-display"
+            >
+              <span>Get Free Consultation</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Banner Callout -->
+    <div class="mt-16 bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-display">
+          Need a Tailored Digital Growth Strategy for Your Business?
+        </h3>
+        <p class="text-slate-600 text-sm mt-1">
+          Our founders will personally review your current market standing and draft a 90-day execution plan.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <button type="button" class="btn-cta-orange text-xs py-3.5 px-6 trigger-audit-modal font-bold">
+          Request Custom Audit
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>

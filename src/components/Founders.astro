@@ -1,0 +1,59 @@
+---
+import Section from './Section.astro';
+
+const founders = [
+  {
+    name: "Naveen",
+    skills: ["Photography", "Videography", "Video Editing", "Motion Graphics", "Web Development", "Content Planning"]
+  },
+  {
+    name: "Nidhith",
+    skills: ["Graphic Design", "Poster Design", "Content Planning", "Social Media Management", "Caption Writing"]
+  },
+  {
+    name: "Hemanth",
+    skills: ["Web Development", "SEO"]
+  }
+];
+---
+
+<Section id="studio" class="bg-white border-t border-brand-border">
+  <div class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div class="max-w-2xl">
+      <h2 class="h2 text-brand-text mb-6">
+        Independent studio. <br class="hidden md:block"/>
+        <span class="text-brand-muted font-serif italic">Collaborative team.</span>
+      </h2>
+      <p>
+        TC Web & Studio is driven by three founders combining their expertise in visual design, production, and digital engineering to deliver cohesive brand experiences.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+    {founders.map((founder, index) => (
+      <div class="flex flex-col group">
+        <!-- Placeholder for Founder Portrait -->
+        <div class="relative w-full aspect-[3/4] bg-[#EAE8E3] overflow-hidden rounded-sm mb-6 flex items-center justify-center border border-brand-border/50">
+          <div class="text-brand-muted/40 font-serif text-6xl italic group-hover:scale-110 transition-transform duration-700 ease-out">
+            0{index + 1}
+          </div>
+          <div class="absolute bottom-4 right-4 bg-white px-2 py-1 text-[0.65rem] uppercase tracking-widest font-semibold text-brand-text rounded-sm">
+            Portrait Pending
+          </div>
+        </div>
+        
+        <h3 class="text-2xl font-medium text-brand-text mb-4 border-b border-brand-border pb-4">{founder.name}</h3>
+        
+        <ul class="flex flex-col space-y-2">
+          {founder.skills.map(skill => (
+            <li class="text-sm text-brand-muted flex items-start">
+              <span class="text-brand-accent mr-2 mt-0.5">•</span>
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</Section>

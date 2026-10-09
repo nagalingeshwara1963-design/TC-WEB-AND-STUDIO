@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopHeader from '../components/TopHeader.astro';
+import Navbar from '../components/Navbar.astro';
+import HeroAgency from '../components/HeroAgency.astro';
+import TrustedBrands from '../components/TrustedBrands.astro';
+import KeyStatsAndServices from '../components/KeyStatsAndServices.astro';
+import GrowthCalculator from '../components/GrowthCalculator.astro';
+import DetailedServices from '../components/DetailedServices.astro';
+import HowWeWork from '../components/HowWeWork.astro';
+import IndustriesGrid from '../components/IndustriesGrid.astro';
+import ClientResultsMetrics from '../components/ClientResultsMetrics.astro';
+import FoundersTrust from '../components/FoundersTrust.astro';
+import TestimonialsReviews from '../components/TestimonialsReviews.astro';
+import LocationAndContact from '../components/LocationAndContact.astro';
+import ComprehensiveFooter from '../components/ComprehensiveFooter.astro';
+import AuditModal from '../components/AuditModal.astro';
+import FloatingActions from '../components/FloatingActions.astro';
+---
+
+<Layout 
+	title="TC Web & Studio | Digital Growth, SEO & Web Development in Mysuru"
+	description="Top Digital Marketing, SEO and Custom Web Development agency in Mysuru, Karnataka. We help ambitious businesses grow traffic, generate qualified customer leads, and increase revenue."
+>
+	<!-- Top notification and quick contact header -->
+	<TopHeader />
+
+	<!-- Main frosted glass navigation with audit triggers -->
+	<Navbar />
+
+	<main id="main-content" class="flex-grow">
+		<!-- Hero Banner with Integrated High-Conversion Audit Form -->
+		<HeroAgency />
+
+		<!-- Trusted Brands / Known Clients Strip & Capability Marquee -->
+		<TrustedBrands />
+
+		<!-- Value Proposition & 6 Service Jump Cards -->
+		<KeyStatsAndServices />
+
+		<!-- Interactive Growth & ROI Estimator Widget -->
+		<GrowthCalculator />
+
+		<!-- Deep Dive Alternating Service Breakdowns (SEO, Web, Video, Media) -->
+		<DetailedServices />
+
+		<!-- How We Work - Dedicated 3-Pillar Agile Methodology -->
+		<HowWeWork />
+
+		<!-- Industries We Serve Grid -->
+		<IndustriesGrid />
+
+		<!-- Client Results & Case Studies with Measurable Metrics -->
+		<ClientResultsMetrics />
+
+		<!-- Authentic Founders Leadership & Direct Accountability -->
+		<FoundersTrust />
+
+		<!-- Client Testimonials & 5-Star Reviews -->
+		<TestimonialsReviews />
+
+		<!-- Studio Location with Mysuru Map Embed & Direct Inquiry Form -->
+		<LocationAndContact />
+	</main>
+
+	<!-- Multi-column Rich Agency Footer -->
+	<ComprehensiveFooter />
+
+	<!-- Global Free Website & SEO Audit Modal -->
+	<AuditModal />
+
+	<!-- Floating WhatsApp Chat & Mobile Bottom Conversion Bar -->
+	<FloatingActions />
+</Layout>

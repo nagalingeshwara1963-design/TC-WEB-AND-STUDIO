@@ -1,0 +1,64 @@
+---
+const capabilities = [
+  "BRAND",
+  "SOCIAL",
+  "DIGITAL",
+  "FILM",
+  "BRAND",
+  "SOCIAL",
+  "DIGITAL",
+  "FILM"
+];
+---
+
+<div class="w-full overflow-hidden bg-brand-text text-brand-bg py-4 md:py-6 border-y border-brand-border" aria-hidden="true">
+  <div class="flex items-center whitespace-nowrap marquee-container">
+    <div class="flex items-center justify-around w-full shrink-0 marquee-content min-w-full">
+      {capabilities.map(cap => (
+        <span class="text-sm md:text-base font-semibold tracking-[0.2em] uppercase mx-8">
+          {cap}
+        </span>
+      ))}
+    </div>
+    <div class="flex items-center justify-around w-full shrink-0 marquee-content min-w-full">
+      {capabilities.map(cap => (
+        <span class="text-sm md:text-base font-semibold tracking-[0.2em] uppercase mx-8">
+          {cap}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee-container {
+    display: flex;
+    width: max-content;
+  }
+
+  .marquee-content {
+    animation: marquee 40s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-content {
+      animation: none;
+    }
+    .marquee-container {
+      justify-content: space-around;
+      width: 100%;
+    }
+    .marquee-container > div:nth-child(2) {
+      display: none;
+    }
+  }
+</style>

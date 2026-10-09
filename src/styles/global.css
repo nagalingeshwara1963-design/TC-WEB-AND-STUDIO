@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Professional Light Agency Palette ── */
+  --color-brand-bg: #ffffff;
+  --color-brand-surface: #f8fafc;
+  --color-brand-card: #ffffff;
+  --color-brand-navy: #0f172a;
+  --color-brand-blue: #2563eb;
+  --color-brand-blue-hover: #1d4ed8;
+  --color-brand-indigo: #4f46e5;
+  --color-brand-orange: #ea580c;
+  --color-brand-orange-hover: #c2410c;
+  --color-brand-amber: #d97706;
+  --color-brand-emerald: #059669;
+  --color-brand-teal: #0d9488;
+  --color-brand-cyan: #0284c7;
+  --color-brand-text-main: #0f172a;
+  --color-brand-text-body: #334155;
+  --color-brand-text-muted: #64748b;
+  --color-brand-border: #e2e8f0;
+  --color-brand-border-subtle: #f1f5f9;
+
+  /* ── Typography ── */
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ─────────────────────────────────────────
+   BASE LAYER — Typography & Defaults
+───────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.65;
+  }
+
+  ::selection {
+    background: rgba(234, 88, 12, 0.18);
+    color: #9a3412;
+  }
+
+  h1, .h1 {
+    font-family: var(--font-display);
+    color: var(--color-brand-text-main);
+    font-size: clamp(2.4rem, 5vw + 0.5rem, 4.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+  }
+
+  h2, .h2 {
+    font-family: var(--font-display);
+    color: var(--color-brand-text-main);
+    font-size: clamp(1.85rem, 3.2vw + 0.5rem, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  h3, .h3 {
+    font-family: var(--font-display);
+    color: var(--color-brand-text-main);
+    font-size: clamp(1.25rem, 1.8vw + 0.4rem, 1.85rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  h4, .h4 {
+    font-family: var(--font-display);
+    color: var(--color-brand-text-main);
+    font-size: clamp(1.05rem, 1.4vw + 0.3rem, 1.4rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+}
+
+/* ─────────────────────────────────────────
+   GRADIENT TEXT UTILITIES
+───────────────────────────────────────── */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────
+   PREMIUM LIGHT BUTTON SYSTEM
+───────────────────────────────────────── */
+.btn-cta-orange {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border-radius: 0.75rem;
+  transition: all 0.25s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cta-orange:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.45);
+}
+
+.btn-primary-agency {
+  background: #0f172a;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: 0.75rem;
+  transition: all 0.25s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+  cursor: pointer;
+  border: 1px solid #1e293b;
+}
+
+.btn-primary-agency:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+}
+
+.btn-outline-light {
+  background: #ffffff;
+  color: #1e293b;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.8rem 1.75rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-outline-light:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────
+   CARDS — Clean Corporate Light
+───────────────────────────────────────── */
+.card-light {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-light:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 35px -5px rgba(15, 23, 42, 0.08), 0 10px 15px -3px rgba(15, 23, 42, 0.04);
+  transform: translateY(-4px);
+}
+
+/* Subtle dot grid on light background */
+.bg-light-pattern {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle line grid on light background */
+.bg-light-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+}
+
+/* ─────────────────────────────────────────
+   BADGES
+───────────────────────────────────────── */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-family: var(--font-display);
+}
+
+.badge-pill-orange {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #ffedd5;
+}
+
+.badge-pill-blue {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #dbeafe;
+}
+
+.badge-pill-emerald {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #d1fae5;
+}
+
+/* ─────────────────────────────────────────
+   ANIMATIONS & TRANSITIONS
+───────────────────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Floating animation */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-subtle {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────
+   SCROLL BAR
+───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ─────────────────────────────────────────
+   MODAL
+───────────────────────────────────────── */
+body.modal-open {
+  overflow: hidden;
+}

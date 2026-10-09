@@ -1,0 +1,105 @@
+---
+// HowWeWork.astro — 3-Pillar Agile Methodology (Clean Corporate Light Edition)
+const steps = [
+  {
+    num: "01",
+    title: "Discover & Strategy",
+    desc: "Deep-dive into your business, target audience, and local competitors. We define clear KPIs, map customer intent keywords, and architect a customized growth blueprint.",
+    features: ["Market & Competitor Analysis", "Local Search Intent Mapping", "90-Day Growth KPI Framework"],
+    badgeBg: "bg-orange-100 text-orange-700 border-orange-200",
+    checkColor: "text-orange-600"
+  },
+  {
+    num: "02",
+    title: "Design & Build",
+    desc: "Transform strategy into high-speed digital assets — bespoke Astro web platforms, brand systems, and 4K video content — engineered in-house with zero outsourcing.",
+    features: ["Custom Astro Web Architecture", "Brand Identity Systems", "4K Commercial Video Production"],
+    badgeBg: "bg-blue-100 text-blue-700 border-blue-200",
+    checkColor: "text-blue-600"
+  },
+  {
+    num: "03",
+    title: "Launch & Scale",
+    desc: "Deploy, optimize, and compound. We manage technical SEO, analyze real inbound inquiries, run targeted campaigns, and deliver transparent monthly performance reviews.",
+    features: ["Google 3-Pack Rank Expansion", "WhatsApp Conversion Optimization", "Transparent Deliverable Reports"],
+    badgeBg: "bg-emerald-100 text-emerald-700 border-emerald-200",
+    checkColor: "text-emerald-600"
+  }
+];
+---
+
+<section class="py-20 lg:py-28 bg-white border-b border-slate-200/80" id="how-we-work">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-3 font-display">
+        Our Process
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 font-display leading-tight">
+        How We Turn Strategy into <span class="text-gradient-orange">Measurable Revenue</span>
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-sans">
+        A disciplined, three-phase methodology that eliminates guesswork and delivers predictable, compounding business growth.
+      </p>
+    </div>
+
+    <!-- 3 Steps Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {steps.map(step => (
+        <div class="card-light p-8 flex flex-col justify-between group relative overflow-hidden">
+          
+          <div>
+            <!-- Step Number Badge -->
+            <div class="flex items-center justify-between mb-6">
+              <span class={`text-base font-black font-mono px-3.5 py-1.5 rounded-xl border ${step.badgeBg}`}>
+                {step.num}
+              </span>
+              <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400">
+                Phase {step.num}
+              </span>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3 font-display leading-snug">
+              {step.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-slate-600 text-sm leading-relaxed mb-6 font-sans">
+              {step.desc}
+            </p>
+
+            <!-- Feature Bullets -->
+            <ul class="space-y-2.5 pt-4 border-t border-slate-100 text-xs text-slate-700 font-medium">
+              {step.features.map(feat => (
+                <li class="flex items-center gap-2.5">
+                  <span class={`font-bold ${step.checkColor}`}>✓</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-400 group-hover:text-blue-600 flex items-center gap-1 transition-colors font-display">
+              <span>Standard Timeline: 2–3 Weeks</span>
+            </span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Action -->
+    <div class="mt-14 text-center">
+      <button type="button" class="btn-primary-agency text-xs sm:text-sm py-3.5 px-7 trigger-audit-modal cursor-pointer font-bold">
+        <span>Start Phase 01: Request Free Strategy Discovery</span>
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>

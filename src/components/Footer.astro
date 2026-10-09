@@ -1,0 +1,73 @@
+---
+import Section from './Section.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-brand-text text-white pt-20 pb-10 border-t border-brand-text">
+  <Section yPadding="none" class="pb-16 border-b border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      
+      <!-- Brand & Mission -->
+      <div class="lg:col-span-1 flex flex-col">
+        <a href="/" class="group flex flex-col font-medium tracking-tight hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-sm mb-6 inline-block w-max">
+          <span class="text-2xl leading-none text-white">TC</span>
+          <span class="text-xs tracking-widest text-white/50 uppercase group-hover:text-brand-accent transition-colors mt-1">Web & Studio</span>
+        </a>
+        <p class="text-white/60 text-sm max-w-[30ch]">
+          Strategy, design, content, films and digital experiences based in Mysuru, India.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex flex-col">
+        <h4 class="text-sm font-semibold uppercase tracking-widest text-white/80 mb-6">Menu</h4>
+        <ul class="flex flex-col space-y-4">
+          <li><a href="#work" class="text-white/60 hover:text-white transition-colors text-sm">Work</a></li>
+          <li><a href="#services" class="text-white/60 hover:text-white transition-colors text-sm">Services</a></li>
+          <li><a href="#studio" class="text-white/60 hover:text-white transition-colors text-sm">Studio</a></li>
+          <li><a href="#process" class="text-white/60 hover:text-white transition-colors text-sm">Process</a></li>
+          <li><a href="#contact" class="text-white/60 hover:text-white transition-colors text-sm">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="flex flex-col">
+        <h4 class="text-sm font-semibold uppercase tracking-widest text-white/80 mb-6">Capabilities</h4>
+        <ul class="flex flex-col space-y-4">
+          <li class="text-white/60 text-sm">Brand & Design</li>
+          <li class="text-white/60 text-sm">Social & Growth</li>
+          <li class="text-white/60 text-sm">Websites & Search</li>
+          <li class="text-white/60 text-sm">Films & Photography</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="flex flex-col">
+        <h4 class="text-sm font-semibold uppercase tracking-widest text-white/80 mb-6">Connect</h4>
+        <div class="flex flex-col space-y-4">
+          <p class="text-white/60 text-sm">
+            Ready to discuss your project?
+          </p>
+          <a href="#contact" class="text-brand-accent hover:text-white transition-colors text-sm font-medium">
+            Start a Project &rarr;
+          </a>
+          <!-- Social / Email to be added later once supplied by founders -->
+          <p class="text-white/40 text-xs italic mt-4">
+            (Contact details pending client approval)
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </Section>
+  
+  <Section yPadding="none" class="pt-8">
+    <div class="flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
+      <p>&copy; {year} TC Web & Studio. All rights reserved.</p>
+      <div class="mt-4 md:mt-0 flex space-x-6">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </Section>
+</footer>

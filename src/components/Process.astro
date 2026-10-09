@@ -1,0 +1,57 @@
+---
+import Section from './Section.astro';
+
+const steps = [
+  {
+    num: "01",
+    title: "Understand",
+    desc: "Learn about the business, audience, objectives and challenges. We start every project by listening and defining clear goals."
+  },
+  {
+    num: "02",
+    title: "Create",
+    desc: "Develop the appropriate strategy, design, content, production or digital solution. This is where ideas turn into tangible assets."
+  },
+  {
+    num: "03",
+    title: "Refine & Deliver",
+    desc: "Review the work, incorporate agreed feedback and deliver the agreed scope. A collaborative finish ensures everything aligns perfectly."
+  }
+];
+---
+
+<Section id="process" class="bg-brand-text text-white relative overflow-hidden">
+  <!-- Subtle decorative background element -->
+  <div class="absolute -top-[20%] -right-[10%] w-[50%] aspect-square rounded-full border border-white/5 opacity-20 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute -bottom-[20%] -left-[10%] w-[50%] aspect-square rounded-full border border-white/5 opacity-20 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 relative z-10">
+    <div class="max-w-2xl">
+      <h2 class="h2 text-white mb-6">
+        Our Process
+      </h2>
+      <p class="text-white/70 text-lg">
+        A straightforward, collaborative workflow designed to move from insight to execution efficiently.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 relative z-10">
+    {steps.map(step => (
+      <div class="flex flex-col relative group">
+        <div class="text-brand-accent font-serif text-5xl md:text-6xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
+          {step.num}
+        </div>
+        <h3 class="text-2xl font-medium text-white mb-4">
+          {step.title}
+        </h3>
+        <p class="text-white/60 leading-relaxed text-sm md:text-base max-w-sm">
+          {step.desc}
+        </p>
+        
+        <!-- Mobile connector line -->
+        <div class="md:hidden absolute -bottom-6 left-6 w-0.5 h-6 bg-white/10 last:hidden" aria-hidden="true"></div>
+      </div>
+    ))}
+  </div>
+</Section>

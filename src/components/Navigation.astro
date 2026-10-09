@@ -1,0 +1,173 @@
+---
+const links = [
+  { name: 'Work', href: '#work' },
+  { name: 'Services', href: '#services' },
+  { name: 'Studio', href: '#studio' },
+  { name: 'Process', href: '#process' },
+  { name: 'Contact', href: '#contact' }
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-border transition-colors duration-300">
+  <div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 h-20 md:h-24 flex items-center justify-between">
+    
+    <!-- Brand -->
+    <a href="/" class="group flex flex-col font-medium tracking-tight hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-sm" aria-label="TC Web & Studio Home">
+      <span class="text-xl md:text-2xl leading-none">TC</span>
+      <span class="text-[0.65rem] md:text-xs tracking-widest text-brand-muted uppercase group-hover:text-brand-accent transition-colors mt-1">Web & Studio</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8" aria-label="Main Navigation">
+      <ul class="flex items-center space-x-8">
+        {links.map(link => (
+          <li>
+            <a 
+              href={link.href}
+              class="text-sm font-medium text-brand-text hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-sm px-1 py-1"
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a 
+        href="#contact" 
+        class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-brand-text hover:bg-brand-accent transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent focus-visible:ring-offset-brand-bg"
+      >
+        Start a Project
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-btn"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-sm"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="block w-6 h-[2px] bg-brand-text transition-transform duration-300 origin-center rounded-full"></span>
+      <span class="block w-6 h-[2px] bg-brand-text transition-transform duration-300 origin-center rounded-full"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Navigation Menu -->
+<div 
+  id="mobile-menu" 
+  class="fixed inset-0 z-40 bg-brand-bg transform -translate-y-full transition-transform duration-500 ease-in-out md:hidden flex flex-col pt-24 px-6 pb-12 overflow-y-auto hidden-when-closed"
+  aria-hidden="true"
+>
+  <nav class="flex flex-col space-y-6 mt-8" aria-label="Mobile Navigation">
+    <ul class="flex flex-col space-y-6 border-b border-brand-border pb-8">
+      {links.map(link => (
+        <li>
+          <a 
+            href={link.href}
+            class="mobile-link text-3xl font-medium text-brand-text hover:text-brand-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-sm inline-block"
+          >
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+    
+    <div class="pt-8 flex flex-col items-start space-y-6">
+      <a 
+        href="#contact" 
+        class="mobile-link inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-brand-text hover:bg-brand-accent transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-accent focus-visible:ring-offset-brand-bg w-full"
+      >
+        Start a Project
+      </a>
+      
+      <p class="text-sm text-brand-muted mt-8">
+        Mysuru-based. Working across India.
+      </p>
+    </div>
+  </nav>
+</div>
+
+<style>
+  /* Mobile menu open states */
+  :global(.menu-open) body {
+    overflow: hidden;
+  }
+  
+  :global(.menu-open) #mobile-menu-btn span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+  
+  :global(.menu-open) #mobile-menu-btn span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  
+  :global(.menu-open) #mobile-menu {
+    transform: translateY(0);
+  }
+
+  .hidden-when-closed:not(.active-menu) {
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out, visibility 0s 0.5s;
+  }
+  
+  .active-menu {
+    visibility: visible;
+  }
+</style>
+
+<script>
+  // Setup mobile menu toggle logic
+  function setupMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+    
+    if (!btn || !menu) return;
+    
+    function toggleMenu() {
+      const isExpanded = btn?.getAttribute('aria-expanded') === 'true';
+      
+      if (isExpanded) {
+        // Close menu
+        btn?.setAttribute('aria-expanded', 'false');
+        menu?.setAttribute('aria-hidden', 'true');
+        document.documentElement.classList.remove('menu-open');
+        setTimeout(() => menu?.classList.remove('active-menu'), 500);
+      } else {
+        // Open menu
+        menu?.classList.add('active-menu');
+        // Small delay to allow display:block to apply before transition
+        setTimeout(() => {
+          btn?.setAttribute('aria-expanded', 'true');
+          menu?.setAttribute('aria-hidden', 'false');
+          document.documentElement.classList.add('menu-open');
+        }, 10);
+      }
+    }
+    
+    // Toggle on button click
+    btn.addEventListener('click', toggleMenu);
+    
+    // Close on link click
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (btn.getAttribute('aria-expanded') === 'true') {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+        toggleMenu();
+        btn.focus();
+      }
+    });
+  }
+  
+  // Run setup when the DOM is ready and on view transitions
+  document.addEventListener('DOMContentLoaded', setupMobileMenu);
+  document.addEventListener('astro:page-load', setupMobileMenu);
+</script>

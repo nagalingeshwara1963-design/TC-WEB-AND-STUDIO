@@ -1,0 +1,38 @@
+---
+import Section from './Section.astro';
+
+const industries = [
+  "Education",
+  "Automotive",
+  "Food and hospitality",
+  "Agriculture",
+  "Real estate",
+  "Healthcare",
+  "Personal brands",
+  "Startups and established businesses"
+];
+---
+
+<Section class="bg-[#F7F6F2]">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+    <div class="lg:col-span-5 sticky top-32">
+      <h2 class="h2 text-brand-text mb-6">
+        Industries we serve.
+      </h2>
+      <p class="max-w-md">
+        We partner with diverse sectors, bringing fresh perspectives while respecting industry contexts.
+      </p>
+    </div>
+    
+    <div class="lg:col-span-7">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0 border-t border-brand-border">
+        {industries.map(industry => (
+          <div class="border-b border-brand-border py-6 flex items-center group cursor-default">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-border mr-4 group-hover:bg-brand-accent transition-colors duration-300"></span>
+            <h3 class="text-lg md:text-xl font-medium text-brand-text group-hover:text-brand-accent transition-colors duration-300">{industry}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Section>

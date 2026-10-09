@@ -1,0 +1,112 @@
+---
+// FoundersTrust.astro — Authentic Founders Leadership (Light Corporate Edition)
+const founders = [
+  {
+    name: "Naveen",
+    role: "Creative Director & Lead Filmmaker",
+    skills: ["4K Commercial Videography", "Visual Direction", "Brand Storytelling", "Reel Concepts"],
+    quote: "Every video we film is engineered to command immediate attention within the first 3 seconds and convert viewers into genuine inquiries.",
+    badgeBg: "bg-purple-100 text-purple-700 border-purple-200",
+    initials: "NV"
+  },
+  {
+    name: "Nidhith",
+    role: "Lead Creative Designer & Content Strategist",
+    skills: ["Visual Brand Identity", "Creative Graphics", "Social Strategy", "Regional Copywriting"],
+    quote: "Authentic design isn't just about looking modern; it's about making your regional brand feel undeniably credible and trustworthy.",
+    badgeBg: "bg-orange-100 text-orange-700 border-orange-200",
+    initials: "ND"
+  },
+  {
+    name: "Hemanth",
+    role: "Lead Technical Architect & SEO Strategist",
+    skills: ["Astro Platform Architecture", "Local Google Maps SEO", "Conversion Rate Optimization", "Analytics"],
+    quote: "We don't build sluggish WordPress websites with 40 plugins. We engineer custom, lightning-fast Astro engines that rank #1 on Google.",
+    badgeBg: "bg-blue-100 text-blue-700 border-blue-200",
+    initials: "HM"
+  }
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#f8fafc] border-b border-slate-200/80" id="studio">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-orange-600 bg-orange-50 border border-orange-200 px-4 py-1.5 rounded-full mb-3 font-display">
+        Direct Accountability
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 font-display leading-tight">
+        Work Directly with <span class="text-gradient-orange">Founders</span>, Not Middlemen
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-sans">
+        Unlike bloated agencies that hand your project off to junior interns, our founders personally strategize, build, and optimize your digital presence.
+      </p>
+    </div>
+
+    <!-- Founders Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {founders.map(founder => (
+        <div class="card-light p-8 flex flex-col justify-between group">
+          <div>
+            <!-- Header with Initials Badge -->
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-slate-900 text-white font-extrabold text-lg flex items-center justify-center font-display shadow-md">
+                {founder.initials}
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 font-display">
+                  {founder.name}
+                </h3>
+                <span class={`text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border inline-block mt-1 ${founder.badgeBg}`}>
+                  {founder.role}
+                </span>
+              </div>
+            </div>
+
+            <!-- Quote -->
+            <blockquote class="text-slate-600 text-sm leading-relaxed mb-6 italic font-sans border-l-2 border-slate-200 pl-4">
+              "{founder.quote}"
+            </blockquote>
+
+            <!-- Skill Tags -->
+            <div class="pt-4 border-t border-slate-100">
+              <span class="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">Core Competencies:</span>
+              <div class="flex flex-wrap gap-1.5">
+                {founder.skills.map(skill => (
+                  <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <a href="tel:+919876543210" class="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 font-display">
+              <span>Connect with {founder.name} directly</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Trust Guarantees -->
+    <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+      <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <span class="block text-xl font-extrabold text-slate-900 font-display">100% In-House</span>
+        <span class="text-xs text-slate-500">Zero sub-contracting or hidden agency fees</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <span class="block text-xl font-extrabold text-slate-900 font-display">24-Hour Responses</span>
+        <span class="text-xs text-slate-500">Direct founder WhatsApp group on all campaigns</span>
+      </div>
+      <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <span class="block text-xl font-extrabold text-slate-900 font-display">Transparent Reporting</span>
+        <span class="text-xs text-slate-500">Live rankings, call tracking & metric audits</span>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,122 @@
+---
+// TestimonialsReviews.astro — Verified Client Endorsements & Proof (Light Corporate Edition)
+const reviews = [
+  {
+    quote: "TC Web & Studio completely transformed our local digital presence. Their attention to detail in search engine optimization and 4K vehicle video walkarounds brought a noticeable surge in real buyer inquiries to our showroom. The founders are always directly accessible.",
+    author: "Management Team",
+    company: "Jain Autocars",
+    location: "Mysuru, Karnataka",
+    rating: 5,
+    tag: "Automotive Growth",
+    avatarBg: "bg-orange-600"
+  },
+  {
+    quote: "We required a fast, highly accessible website for aspirants across Karnataka along with strong Google search rankings. Hemanth and the team delivered a platform that loads in milliseconds and ranks right at the top for our competitive exam keywords. Exceptional dedication.",
+    author: "Academic Director",
+    company: "Saaraswath IAS KAS Academy",
+    location: "Mysuru / Bengaluru",
+    rating: 5,
+    tag: "Education & SEO",
+    avatarBg: "bg-blue-600"
+  },
+  {
+    quote: "The visual quality produced by Naveen and Nidhith is truly top-tier. Their 4K video shoots, promotional posters, and social media planning elevated our academy's brand identity. We received immense praise from our students and community.",
+    author: "Founder & Creative Lead",
+    company: "Soulfull Academy",
+    location: "Mysuru, Karnataka",
+    rating: 5,
+    tag: "4K Media & Branding",
+    avatarBg: "bg-purple-600"
+  },
+  {
+    quote: "TC Web & Studio helped us connect our farm's organic harvests directly with urban households without losing our authentic story. Their video documentation and direct WhatsApp catalog made ordering simple and transparent for our buyers.",
+    author: "Lead Partner",
+    company: "Manikanta Farms",
+    location: "Karnataka",
+    rating: 5,
+    tag: "Agro & Direct Commerce",
+    avatarBg: "bg-emerald-600"
+  }
+];
+---
+
+<section class="py-20 lg:py-28 bg-white border-b border-slate-200/80" id="testimonials">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-4 py-1.5 rounded-full mb-3 font-display">
+        Client Endorsements
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 font-display leading-tight">
+        Endorsed by Businesses Across <br />
+        <span class="text-gradient-orange">Karnataka's Key Sectors</span>
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-sans">
+        Discover what happens when you partner directly with dedicated studio founders rather than an impersonal corporate agency.
+      </p>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {reviews.map(item => (
+        <div class="card-light p-8 sm:p-9 flex flex-col justify-between group">
+          <div>
+            <!-- Top bar -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-1 text-amber-500 text-base">
+                {"★".repeat(item.rating)}
+                <span class="text-xs text-slate-500 ml-1.5 font-mono font-bold">5.0</span>
+              </div>
+              <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                Verified Client
+              </span>
+            </div>
+
+            <!-- Quote Text -->
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-8 italic font-sans">
+              "{item.quote}"
+            </p>
+          </div>
+
+          <!-- Bottom Author Bar -->
+          <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+              <div class={`w-11 h-11 rounded-xl ${item.avatarBg} text-white font-extrabold text-base flex items-center justify-center font-display shadow-sm`}>
+                {item.company.charAt(0)}
+              </div>
+              <div>
+                <span class="block font-bold text-slate-900 text-base font-display">
+                  {item.company}
+                </span>
+                <span class="block text-xs text-slate-500">
+                  {item.author} • {item.location}
+                </span>
+              </div>
+            </div>
+
+            <span class="text-[11px] font-mono text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full hidden sm:inline-block">
+              {item.tag}
+            </span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Trust Summary Bar -->
+    <div class="mt-14 text-center">
+      <div class="inline-flex flex-wrap items-center justify-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 max-w-2xl mx-auto shadow-sm">
+        <div class="flex items-center gap-2">
+          <span class="text-amber-500 text-lg">★★★★★</span>
+          <span class="text-xs sm:text-sm text-slate-800 font-bold">100% 5-Star Partner Satisfaction</span>
+        </div>
+        <span class="hidden sm:inline text-slate-300">•</span>
+        <button type="button" class="btn-cta-orange text-xs py-2 px-5 trigger-audit-modal cursor-pointer font-bold">
+          Partner with Our Founders
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>

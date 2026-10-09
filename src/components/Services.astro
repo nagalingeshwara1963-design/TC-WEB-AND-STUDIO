@@ -1,0 +1,66 @@
+---
+import Section from './Section.astro';
+
+const services = [
+  {
+    num: "01",
+    title: "Brand & Design",
+    desc: "Brand identity, visual systems, graphic design, campaign creatives and brand promotion.",
+    color: "bg-[#EAE8E3]"
+  },
+  {
+    num: "02",
+    title: "Social & Growth",
+    desc: "Social media management, content strategy, paid advertising, influencer marketing and lead generation.",
+    color: "bg-[#DFDBD0]"
+  },
+  {
+    num: "03",
+    title: "Websites & Search",
+    desc: "Website design and development, landing pages, SEO and digital experiences.",
+    color: "bg-brand-border"
+  },
+  {
+    num: "04",
+    title: "Films & Photography",
+    desc: "Photography, commercial video, reels, editing, motion graphics and pre-wedding films.",
+    color: "bg-brand-text text-brand-bg",
+    special: true
+  }
+];
+---
+
+<Section id="services" class="bg-white">
+  <div class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div class="max-w-2xl">
+      <h2 class="h2 text-brand-text mb-6">
+        Different disciplines. <br class="hidden md:block"/>
+        <span class="text-brand-muted font-serif italic">One connected studio.</span>
+      </h2>
+      <p>
+        We blur the lines between strategy, design, and production to build cohesive brands that stand out in crowded markets.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+    {services.map(service => (
+      <div class={`flex flex-col h-full rounded-sm p-8 ${service.color} ${service.special ? 'text-white' : 'text-brand-text'} transition-transform duration-500 hover:-translate-y-2`}>
+        <div class="mb-12">
+          <span class={`text-sm font-semibold tracking-widest ${service.special ? 'text-white/60' : 'text-brand-muted'}`}>
+            {service.num}
+          </span>
+        </div>
+        
+        <div class="mt-auto">
+          <h3 class={`text-xl font-semibold mb-4 ${service.special ? 'text-white' : 'text-brand-text'}`}>
+            {service.title}
+          </h3>
+          <p class={`text-sm leading-relaxed ${service.special ? 'text-white/80' : 'text-brand-text/80'}`}>
+            {service.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
