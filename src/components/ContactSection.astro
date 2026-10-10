@@ -6,8 +6,7 @@ const founders = [
   {
     name: "Naveen",
     key: "naveen",
-    image: `${basePath}/images/founders/naveen.jpg`,
-    objectPosition: "50% 36%",
+    image: `${basePath}/images/founders/naveen-face.jpg`,
     phone: "9742963370",
     displayPhone: "+91 97429 63370",
     role: "Creative Director & Lead Filmmaker",
@@ -18,8 +17,7 @@ const founders = [
   {
     name: "Nidhith",
     key: "nidhith",
-    image: `${basePath}/images/founders/nidhith.jpg`,
-    objectPosition: "42% 18%",
+    image: `${basePath}/images/founders/nidhith-face.jpg`,
     phone: "8197974368",
     displayPhone: "+91 81979 74368",
     role: "Visual Designer & Poster Architect",
@@ -31,8 +29,7 @@ const founders = [
   {
     name: "Hemanth",
     key: "hemanth",
-    image: `${basePath}/images/founders/hemanth.jpg`,
-    objectPosition: "50% 48%",
+    image: `${basePath}/images/founders/hemanth-face.jpg`,
     phone: "9741422544",
     displayPhone: "+91 97414 22544",
     role: "Lead Web Architect & Paid Ads Growth",
@@ -101,14 +98,14 @@ const founders = [
                 <button
                   type="button"
                   data-founder-preview={founder.key}
-                  class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-3 border-white ring-2 ring-purple-300 ring-offset-2 shadow-lg group-hover:scale-105 group-hover:ring-purple-600 transition-all shrink-0 cursor-pointer text-left"
+                  onclick={`window.openFounderPreviewModal && window.openFounderPreviewModal('${founder.key}')`}
+                  class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-white ring-2 ring-purple-300 ring-offset-2 shadow-lg group-hover:scale-105 group-hover:ring-purple-600 transition-all shrink-0 cursor-pointer text-left"
                   title={`Click to preview full portrait of ${founder.name}`}
                 >
                   <img 
                     src={founder.image} 
                     alt={`${founder.name} — Co-Founder`} 
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    style={`object-position: ${founder.objectPosition};`}
                     loading="lazy"
                   />
                   <div class="absolute inset-0 bg-purple-900/0 hover:bg-purple-900/25 transition-colors flex items-center justify-center">

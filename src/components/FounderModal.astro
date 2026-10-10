@@ -6,7 +6,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 <!-- Founder Full Portrait Preview Modal (Fixed Overlay) -->
 <div 
   id="founder-preview-modal" 
-  class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-opacity duration-300"
+  class="fixed inset-0 z-[99999] hidden items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md transition-opacity duration-300"
   role="dialog"
   aria-modal="true"
   aria-labelledby="founder-modal-title"
@@ -125,138 +125,154 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
   </div>
 </div>
 
-<script define:vars={{ basePath }}>
-  const foundersData = {
-    naveen: {
-      name: "Naveen",
-      badge: "Co-Founder • Video Lead",
-      role: "Creative Director & Lead Filmmaker",
-      desc: "Specializes in 4K commercial videos, high-energy reel pacing, cinematic lighting, and brand commercials that command attention.",
-      image: `${basePath}/images/founders/naveen.jpg`,
-      phone: "+91 97429 63370",
-      tel: "tel:+919742963370",
-      waText: "Hi Naveen! I would like to discuss video production and commercial shoots with TC Web & Studio."
-    },
-    nidhith: {
-      name: "Nidhith",
-      badge: "Co-Founder • Poster & Visual Lead",
-      role: "Visual Designer & Poster Architect",
-      desc: "Specializes in high-impact commercial posters, brand identity design, restaurant menus, typography systems, and viral social creatives.",
-      image: `${basePath}/images/founders/nidhith.jpg`,
-      phone: "+91 81979 74368",
-      tel: "tel:+918197974368",
-      waText: "Hi Nidhith! I would like to order posters and visual branding from TC Web & Studio."
-    },
-    hemanth: {
-      name: "Hemanth",
-      badge: "Co-Founder • Web Lead",
-      role: "Lead Web Architect & Paid Ads Growth",
-      desc: "Specializes in custom high-speed web platforms, conversion rate optimization, Meta ad funnels, and organic Google search engine rankings.",
-      image: `${basePath}/images/founders/hemanth.jpg`,
-      phone: "+91 97414 22544",
-      tel: "tel:+919741422544",
-      waText: "Hi Hemanth! I would like to discuss web development and paid ads with TC Web & Studio."
-    }
-  };
-
-  const modal = document.getElementById('founder-preview-modal');
-  const container = document.getElementById('founder-modal-container');
-  const closeBtn = document.getElementById('close-founder-modal-btn');
-  const modalImg = document.getElementById('founder-modal-img');
-  const modalTitle = document.getElementById('founder-modal-title');
-  const modalBadge = document.getElementById('founder-modal-badge');
-  const modalRole = document.getElementById('founder-modal-role');
-  const modalDesc = document.getElementById('founder-modal-desc');
-  const modalCallBtn = document.getElementById('founder-modal-call-btn');
-  const modalCallText = document.getElementById('founder-modal-call-text');
-  const modalWaBtn = document.getElementById('founder-modal-wa-btn');
-  const tabBtns = document.querySelectorAll('.founder-tab-btn');
-
-  function showFounder(key) {
-    const data = foundersData[key];
-    if (!data) return;
-
-    if (modalImg) modalImg.src = data.image;
-    if (modalTitle) modalTitle.textContent = data.name;
-    if (modalBadge) modalBadge.textContent = data.badge;
-    if (modalRole) modalRole.textContent = data.role;
-    if (modalDesc) modalDesc.textContent = data.desc;
-    if (modalCallBtn) modalCallBtn.setAttribute('href', data.tel);
-    if (modalCallText) modalCallText.textContent = `Call ${data.name} (${data.phone})`;
-    
-    if (modalWaBtn) {
-      // WhatsApp routes to Nidhith or direct founder text
-      const waNumber = key === 'nidhith' ? '918197974368' : '918197974368';
-      modalWaBtn.setAttribute('href', `https://wa.me/${waNumber}?text=${encodeURIComponent(data.waText)}`);
-    }
-
-    tabBtns.forEach(btn => {
-      const targetKey = btn.getAttribute('data-switch-founder');
-      if (targetKey === key) {
-        btn.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
-        btn.classList.remove('bg-white', 'text-slate-700', 'border-purple-200');
-      } else {
-        btn.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
-        btn.classList.add('bg-white', 'text-slate-700', 'border-purple-200');
+<script is:inline define:vars={{ basePath }}>
+  (function initFounderModal() {
+    const foundersData = {
+      naveen: {
+        name: "Naveen",
+        badge: "Co-Founder • Video Lead",
+        role: "Creative Director & Lead Filmmaker",
+        desc: "Specializes in 4K commercial videos, high-energy reel pacing, cinematic lighting, and brand commercials that command attention.",
+        image: basePath + "/images/founders/naveen.jpg",
+        phone: "+91 97429 63370",
+        tel: "tel:+919742963370",
+        waText: "Hi Naveen! I would like to discuss video production and commercial shoots with TC Web & Studio."
+      },
+      nidhith: {
+        name: "Nidhith",
+        badge: "Co-Founder • Poster & Visual Lead",
+        role: "Visual Designer & Poster Architect",
+        desc: "Specializes in high-impact commercial posters, brand identity design, restaurant menus, typography systems, and viral social creatives.",
+        image: basePath + "/images/founders/nidhith.jpg",
+        phone: "+91 81979 74368",
+        tel: "tel:+918197974368",
+        waText: "Hi Nidhith! I would like to order posters and visual branding from TC Web & Studio."
+      },
+      hemanth: {
+        name: "Hemanth",
+        badge: "Co-Founder • Web Lead",
+        role: "Lead Web Architect & Paid Ads Growth",
+        desc: "Specializes in custom high-speed web platforms, conversion rate optimization, Meta ad funnels, and organic Google search engine rankings.",
+        image: basePath + "/images/founders/hemanth.jpg",
+        phone: "+91 97414 22544",
+        tel: "tel:+919741422544",
+        waText: "Hi Hemanth! I would like to discuss web development and paid ads with TC Web & Studio."
       }
-    });
-  }
+    };
 
-  function openFounderModal(founderKey = 'naveen') {
-    if (!modal || !container) return;
-    showFounder(founderKey);
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
-
-    requestAnimationFrame(() => {
-      container.classList.remove('scale-95', 'opacity-0');
-      container.classList.add('scale-100', 'opacity-100');
-    });
-  }
-
-  function closeFounderModal() {
-    if (!modal || !container) return;
-    container.classList.remove('scale-100', 'opacity-100');
-    container.classList.add('scale-95', 'opacity-0');
-
-    setTimeout(() => {
-      modal.classList.remove('flex');
-      modal.classList.add('hidden');
-      document.body.style.overflow = '';
-    }, 200);
-  }
-
-  // Setup tab switcher buttons
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-switch-founder');
-      if (key) showFounder(key);
-    });
-  });
-
-  // Setup close buttons & backdrop click
-  if (closeBtn) closeBtn.addEventListener('click', closeFounderModal);
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeFounderModal();
-    });
-  }
-
-  // Escape key closes modal
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
-      closeFounderModal();
+    function getElements() {
+      return {
+        modal: document.getElementById('founder-preview-modal'),
+        container: document.getElementById('founder-modal-container'),
+        closeBtn: document.getElementById('close-founder-modal-btn'),
+        modalImg: document.getElementById('founder-modal-img'),
+        modalTitle: document.getElementById('founder-modal-title'),
+        modalBadge: document.getElementById('founder-modal-badge'),
+        modalRole: document.getElementById('founder-modal-role'),
+        modalDesc: document.getElementById('founder-modal-desc'),
+        modalCallBtn: document.getElementById('founder-modal-call-btn'),
+        modalCallText: document.getElementById('founder-modal-call-text'),
+        modalWaBtn: document.getElementById('founder-modal-wa-btn'),
+        tabBtns: document.querySelectorAll('.founder-tab-btn')
+      };
     }
-  });
 
-  // Attach click listener to any element with data-founder-preview
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-founder-preview]');
-    if (trigger) {
-      e.preventDefault();
-      const founder = trigger.getAttribute('data-founder-preview') || 'naveen';
-      openFounderModal(founder);
+    function showFounder(key) {
+      const els = getElements();
+      const data = foundersData[key];
+      if (!data) return;
+
+      if (els.modalImg) els.modalImg.src = data.image;
+      if (els.modalTitle) els.modalTitle.textContent = data.name;
+      if (els.modalBadge) els.modalBadge.textContent = data.badge;
+      if (els.modalRole) els.modalRole.textContent = data.role;
+      if (els.modalDesc) els.modalDesc.textContent = data.desc;
+      if (els.modalCallBtn) els.modalCallBtn.setAttribute('href', data.tel);
+      if (els.modalCallText) els.modalCallText.textContent = "Call " + data.name + " (" + data.phone + ")";
+      
+      if (els.modalWaBtn) {
+        els.modalWaBtn.setAttribute('href', "https://wa.me/918197974368?text=" + encodeURIComponent(data.waText));
+      }
+
+      els.tabBtns.forEach(function(btn) {
+        var targetKey = btn.getAttribute('data-switch-founder');
+        if (targetKey === key) {
+          btn.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
+          btn.classList.remove('bg-white', 'text-slate-700', 'border-purple-200');
+        } else {
+          btn.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+          btn.classList.add('bg-white', 'text-slate-700', 'border-purple-200');
+        }
+      });
     }
-  });
+
+    function openModal(key) {
+      var els = getElements();
+      if (!els.modal || !els.container) return;
+      showFounder(key || 'naveen');
+      els.modal.classList.remove('hidden');
+      els.modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(function() {
+        els.container.classList.remove('scale-95', 'opacity-0');
+        els.container.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+
+    function closeModal() {
+      var els = getElements();
+      if (!els.modal || !els.container) return;
+      els.container.classList.remove('scale-100', 'opacity-100');
+      els.container.classList.add('scale-95', 'opacity-0');
+
+      setTimeout(function() {
+        els.modal.classList.remove('flex');
+        els.modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+
+    // Expose globally so inline onclick handlers work anytime
+    window.openFounderPreviewModal = openModal;
+    window.closeFounderPreviewModal = closeModal;
+
+    function setupListeners() {
+      var els = getElements();
+      els.tabBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          var k = btn.getAttribute('data-switch-founder');
+          if (k) showFounder(k);
+        };
+      });
+
+      if (els.closeBtn) els.closeBtn.onclick = closeModal;
+      if (els.modal) {
+        els.modal.onclick = function(e) {
+          if (e.target === els.modal) closeModal();
+        };
+      }
+
+      window.onkeydown = function(e) {
+        if (e.key === 'Escape') closeModal();
+      };
+
+      // Document delegation for data-founder-preview
+      document.addEventListener('click', function(e) {
+        var trigger = e.target.closest('[data-founder-preview]');
+        if (trigger) {
+          e.preventDefault();
+          e.stopPropagation();
+          var founder = trigger.getAttribute('data-founder-preview') || 'naveen';
+          openModal(founder);
+        }
+      }, true);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupListeners);
+    } else {
+      setupListeners();
+    }
+  })();
 </script>
