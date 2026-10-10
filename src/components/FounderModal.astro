@@ -1,0 +1,262 @@
+---
+// FounderModal.astro — Interactive Full-Screen Portrait Preview Modal
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!-- Founder Full Portrait Preview Modal (Fixed Overlay) -->
+<div 
+  id="founder-preview-modal" 
+  class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-opacity duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="founder-modal-title"
+>
+  <!-- Modal Dialog Container -->
+  <div 
+    id="founder-modal-container"
+    class="relative w-full max-w-2xl bg-white rounded-3xl sm:rounded-[2rem] border-2 border-purple-200/90 shadow-2xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0 max-h-[92vh] flex flex-col"
+  >
+    <!-- Modal Header with Switcher Tabs & Close Button -->
+    <div class="px-5 py-3.5 sm:px-6 sm:py-4 border-b border-purple-100 flex items-center justify-between bg-[#faf8ff] shrink-0">
+      <!-- Founder Switcher Pills -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <button 
+          type="button" 
+          data-switch-founder="naveen"
+          class="founder-tab-btn px-3 py-1.5 rounded-full text-xs font-bold font-display transition-all border cursor-pointer bg-purple-600 text-white border-purple-600 shadow-sm"
+        >
+          Naveen
+        </button>
+        <button 
+          type="button" 
+          data-switch-founder="nidhith"
+          class="founder-tab-btn px-3 py-1.5 rounded-full text-xs font-bold font-display transition-all border cursor-pointer bg-white text-slate-700 border-purple-200 hover:border-purple-400"
+        >
+          Nidhith
+        </button>
+        <button 
+          type="button" 
+          data-switch-founder="hemanth"
+          class="founder-tab-btn px-3 py-1.5 rounded-full text-xs font-bold font-display transition-all border cursor-pointer bg-white text-slate-700 border-purple-200 hover:border-purple-400"
+        >
+          Hemanth
+        </button>
+      </div>
+
+      <!-- Close Button -->
+      <button 
+        type="button" 
+        id="close-founder-modal-btn"
+        class="w-9 h-9 rounded-full bg-purple-100 hover:bg-purple-200 text-purple-900 flex items-center justify-center transition-colors cursor-pointer border border-purple-200 focus:outline-none"
+        aria-label="Close portrait preview"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Body (Scrollable if screen is compact) -->
+    <div class="overflow-y-auto flex-grow p-4 sm:p-6 flex flex-col md:flex-row gap-5 items-center bg-[#faf8ff]">
+      
+      <!-- Full Portrait Frame -->
+      <div class="w-full md:w-1/2 flex justify-center shrink-0">
+        <div class="relative w-64 sm:w-72 md:w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-purple-200 shadow-lg bg-black/5 group">
+          <img 
+            id="founder-modal-img" 
+            src={`${basePath}/images/founders/naveen.jpg`} 
+            alt="Founder Portrait Preview" 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div class="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-sm text-[10px] font-mono text-white">
+            Original Photo
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder Profile Info & Quick Actions -->
+      <div class="w-full md:w-1/2 flex flex-col justify-center">
+        <div class="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-purple-800 bg-purple-100/90 px-3 py-1 rounded-full w-fit mb-2 border border-purple-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+          <span id="founder-modal-badge">Co-Founder • Video Lead</span>
+        </div>
+
+        <h3 id="founder-modal-title" class="text-2xl sm:text-3xl font-extrabold text-[#180f2d] font-display">
+          Naveen
+        </h3>
+        
+        <p id="founder-modal-role" class="text-xs sm:text-sm font-semibold text-purple-900 mt-1">
+          Creative Director & Lead Filmmaker
+        </p>
+
+        <p id="founder-modal-desc" class="text-xs sm:text-sm text-[#4e4368] mt-3 leading-relaxed font-sans">
+          Directs 4K commercials, product shoots, viral reels, and high-energy video pacing for brands.
+        </p>
+
+        <!-- Direct Actions Strip -->
+        <div class="mt-6 pt-5 border-t border-purple-200/80 flex flex-col sm:flex-row gap-3">
+          <a 
+            id="founder-modal-call-btn" 
+            href="tel:+919742963370" 
+            class="flex-1 py-3 px-4 rounded-xl bg-purple-900 hover:bg-purple-950 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all font-display"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span id="founder-modal-call-text">Call Naveen</span>
+          </a>
+
+          <a 
+            id="founder-modal-wa-btn" 
+            href="https://wa.me/918197974368?text=Hi%20TC%20Studio!%20I%20would%20like%20to%20discuss%20a%20project%20with%20Naveen." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all font-display"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ basePath }}>
+  const foundersData = {
+    naveen: {
+      name: "Naveen",
+      badge: "Co-Founder • Video Lead",
+      role: "Creative Director & Lead Filmmaker",
+      desc: "Specializes in 4K commercial videos, high-energy reel pacing, cinematic lighting, and brand commercials that command attention.",
+      image: `${basePath}/images/founders/naveen.jpg`,
+      phone: "+91 97429 63370",
+      tel: "tel:+919742963370",
+      waText: "Hi Naveen! I would like to discuss video production and commercial shoots with TC Web & Studio."
+    },
+    nidhith: {
+      name: "Nidhith",
+      badge: "Co-Founder • Poster & Visual Lead",
+      role: "Visual Designer & Poster Architect",
+      desc: "Specializes in high-impact commercial posters, brand identity design, restaurant menus, typography systems, and viral social creatives.",
+      image: `${basePath}/images/founders/nidhith.jpg`,
+      phone: "+91 81979 74368",
+      tel: "tel:+918197974368",
+      waText: "Hi Nidhith! I would like to order posters and visual branding from TC Web & Studio."
+    },
+    hemanth: {
+      name: "Hemanth",
+      badge: "Co-Founder • Web Lead",
+      role: "Lead Web Architect & Paid Ads Growth",
+      desc: "Specializes in custom high-speed web platforms, conversion rate optimization, Meta ad funnels, and organic Google search engine rankings.",
+      image: `${basePath}/images/founders/hemanth.jpg`,
+      phone: "+91 97414 22544",
+      tel: "tel:+919741422544",
+      waText: "Hi Hemanth! I would like to discuss web development and paid ads with TC Web & Studio."
+    }
+  };
+
+  const modal = document.getElementById('founder-preview-modal');
+  const container = document.getElementById('founder-modal-container');
+  const closeBtn = document.getElementById('close-founder-modal-btn');
+  const modalImg = document.getElementById('founder-modal-img');
+  const modalTitle = document.getElementById('founder-modal-title');
+  const modalBadge = document.getElementById('founder-modal-badge');
+  const modalRole = document.getElementById('founder-modal-role');
+  const modalDesc = document.getElementById('founder-modal-desc');
+  const modalCallBtn = document.getElementById('founder-modal-call-btn');
+  const modalCallText = document.getElementById('founder-modal-call-text');
+  const modalWaBtn = document.getElementById('founder-modal-wa-btn');
+  const tabBtns = document.querySelectorAll('.founder-tab-btn');
+
+  function showFounder(key) {
+    const data = foundersData[key];
+    if (!data) return;
+
+    if (modalImg) modalImg.src = data.image;
+    if (modalTitle) modalTitle.textContent = data.name;
+    if (modalBadge) modalBadge.textContent = data.badge;
+    if (modalRole) modalRole.textContent = data.role;
+    if (modalDesc) modalDesc.textContent = data.desc;
+    if (modalCallBtn) modalCallBtn.setAttribute('href', data.tel);
+    if (modalCallText) modalCallText.textContent = `Call ${data.name} (${data.phone})`;
+    
+    if (modalWaBtn) {
+      // WhatsApp routes to Nidhith or direct founder text
+      const waNumber = key === 'nidhith' ? '918197974368' : '918197974368';
+      modalWaBtn.setAttribute('href', `https://wa.me/${waNumber}?text=${encodeURIComponent(data.waText)}`);
+    }
+
+    tabBtns.forEach(btn => {
+      const targetKey = btn.getAttribute('data-switch-founder');
+      if (targetKey === key) {
+        btn.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
+        btn.classList.remove('bg-white', 'text-slate-700', 'border-purple-200');
+      } else {
+        btn.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+        btn.classList.add('bg-white', 'text-slate-700', 'border-purple-200');
+      }
+    });
+  }
+
+  function openFounderModal(founderKey = 'naveen') {
+    if (!modal || !container) return;
+    showFounder(founderKey);
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+
+    requestAnimationFrame(() => {
+      container.classList.remove('scale-95', 'opacity-0');
+      container.classList.add('scale-100', 'opacity-100');
+    });
+  }
+
+  function closeFounderModal() {
+    if (!modal || !container) return;
+    container.classList.remove('scale-100', 'opacity-100');
+    container.classList.add('scale-95', 'opacity-0');
+
+    setTimeout(() => {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 200);
+  }
+
+  // Setup tab switcher buttons
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-switch-founder');
+      if (key) showFounder(key);
+    });
+  });
+
+  // Setup close buttons & backdrop click
+  if (closeBtn) closeBtn.addEventListener('click', closeFounderModal);
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeFounderModal();
+    });
+  }
+
+  // Escape key closes modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeFounderModal();
+    }
+  });
+
+  // Attach click listener to any element with data-founder-preview
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-founder-preview]');
+    if (trigger) {
+      e.preventDefault();
+      const founder = trigger.getAttribute('data-founder-preview') || 'naveen';
+      openFounderModal(founder);
+    }
+  });
+</script>

@@ -47,30 +47,86 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
           </p>
         </div>
 
-        <!-- Three Founders Portraits Strip -->
-        <div class="mt-6 pt-6 border-t border-purple-100 grid grid-cols-3 gap-3">
-          <div class="p-3 rounded-2xl bg-purple-50/70 border border-purple-200/80 text-center flex flex-col items-center group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-purple-300 shadow-sm mb-2 group-hover:scale-105 transition-transform">
-              <img src={`${basePath}/images/founders/naveen.jpg`} alt="Naveen" class="w-full h-full object-cover object-top" loading="lazy" />
-            </div>
-            <span class="text-xs font-bold text-[#180f2d] font-display">Naveen</span>
-            <span class="text-[10px] text-purple-700 font-mono">Video & Direction</span>
+        <!-- Three Founders Portraits Strip (Circular, Perfectly Aligned, Click to Preview) -->
+        <div class="mt-8 pt-6 border-t border-purple-100">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold uppercase tracking-wider text-purple-900 flex items-center gap-1.5">
+              <span>✦</span> The 3 Founders (Click photo to preview)
+            </span>
+            <span class="text-[11px] text-purple-600 font-sans font-medium hidden sm:inline">
+              Tap any face for full portrait
+            </span>
           </div>
 
-          <div class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-center flex flex-col items-center group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-amber-300 shadow-sm mb-2 group-hover:scale-105 transition-transform">
-              <img src={`${basePath}/images/founders/nidhith.jpg`} alt="Nidhith" class="w-full h-full object-cover object-top" loading="lazy" />
-            </div>
-            <span class="text-xs font-bold text-[#180f2d] font-display">Nidhith</span>
-            <span class="text-[10px] text-amber-700 font-mono">Posters & Branding</span>
-          </div>
+          <div class="grid grid-cols-3 gap-3 sm:gap-4">
+            <!-- Naveen -->
+            <button 
+              type="button"
+              data-founder-preview="naveen"
+              class="p-3 sm:p-4 rounded-2xl bg-purple-50/80 hover:bg-purple-100/90 border border-purple-200 text-center flex flex-col items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+              title="Click to view full portrait of Naveen"
+            >
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-3 border-white ring-2 ring-purple-400 ring-offset-2 shadow-md mb-2.5 group-hover:scale-105 group-hover:ring-purple-600 transition-all shrink-0">
+                <img 
+                  src={`${basePath}/images/founders/naveen.jpg`} 
+                  alt="Naveen" 
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                  style="object-position: 50% 36%;"
+                  loading="lazy" 
+                />
+                <div class="absolute inset-0 bg-purple-900/0 group-hover:bg-purple-900/20 transition-colors flex items-center justify-center">
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity text-white text-xs font-bold drop-shadow">🔍</span>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#180f2d] font-display">Naveen</span>
+              <span class="text-[10px] text-purple-700 font-mono font-semibold">Video & Direction</span>
+            </button>
 
-          <div class="p-3 rounded-2xl bg-purple-50/70 border border-purple-200/80 text-center flex flex-col items-center group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-purple-300 shadow-sm mb-2 group-hover:scale-105 transition-transform">
-              <img src={`${basePath}/images/founders/hemanth.jpg`} alt="Hemanth" class="w-full h-full object-cover object-top" loading="lazy" />
-            </div>
-            <span class="text-xs font-bold text-[#180f2d] font-display">Hemanth</span>
-            <span class="text-[10px] text-purple-700 font-mono">Web & Paid Ads</span>
+            <!-- Nidhith -->
+            <button 
+              type="button"
+              data-founder-preview="nidhith"
+              class="p-3 sm:p-4 rounded-2xl bg-amber-50/80 hover:bg-amber-100/90 border border-amber-200 text-center flex flex-col items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+              title="Click to view full portrait of Nidhith"
+            >
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-3 border-white ring-2 ring-amber-400 ring-offset-2 shadow-md mb-2.5 group-hover:scale-105 group-hover:ring-amber-600 transition-all shrink-0">
+                <img 
+                  src={`${basePath}/images/founders/nidhith.jpg`} 
+                  alt="Nidhith" 
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                  style="object-position: 42% 18%;"
+                  loading="lazy" 
+                />
+                <div class="absolute inset-0 bg-amber-900/0 group-hover:bg-amber-900/20 transition-colors flex items-center justify-center">
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity text-white text-xs font-bold drop-shadow">🔍</span>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#180f2d] font-display">Nidhith</span>
+              <span class="text-[10px] text-amber-800 font-mono font-semibold">Posters & Branding</span>
+            </button>
+
+            <!-- Hemanth -->
+            <button 
+              type="button"
+              data-founder-preview="hemanth"
+              class="p-3 sm:p-4 rounded-2xl bg-purple-50/80 hover:bg-purple-100/90 border border-purple-200 text-center flex flex-col items-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+              title="Click to view full portrait of Hemanth"
+            >
+              <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-3 border-white ring-2 ring-purple-400 ring-offset-2 shadow-md mb-2.5 group-hover:scale-105 group-hover:ring-purple-600 transition-all shrink-0">
+                <img 
+                  src={`${basePath}/images/founders/hemanth.jpg`} 
+                  alt="Hemanth" 
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                  style="object-position: 50% 48%;"
+                  loading="lazy" 
+                />
+                <div class="absolute inset-0 bg-purple-900/0 group-hover:bg-purple-900/20 transition-colors flex items-center justify-center">
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity text-white text-xs font-bold drop-shadow">🔍</span>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#180f2d] font-display">Hemanth</span>
+              <span class="text-[10px] text-purple-700 font-mono font-semibold">Web & Paid Ads</span>
+            </button>
           </div>
         </div>
 
