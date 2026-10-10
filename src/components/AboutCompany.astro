@@ -1,0 +1,163 @@
+---
+// AboutCompany.astro — About Us (The Company)
+// Light theme with purple tint & gold accents
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<section class="py-20 lg:py-28 bg-[#faf8ff] relative overflow-hidden border-b border-purple-200/60" id="about">
+  <!-- Subtle ambient decorative glow -->
+  <div class="absolute -top-10 right-1/4 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl pointer-events-none animate-float-slow"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100 border border-purple-200 px-4 py-1.5 rounded-full mb-3 font-display shadow-sm">
+        <span class="inline-block text-amber-500 animate-spin-slow">✦</span>
+        <span>The Company</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#180f2d] tracking-tight mb-4 font-display leading-tight">
+        Built on Craft & Skills, <span class="text-gradient-purple-gold">Not Agency Bloat</span>
+      </h2>
+      <p class="text-[#4e4368] text-base sm:text-lg leading-relaxed font-sans">
+        TC Web & Studio was created to give growing businesses a refreshing alternative to traditional agencies. We combine raw technical skill, cinematic visual storytelling, and performance marketing under one roof.
+      </p>
+    </div>
+
+    <!-- Company Story & Value Pillars Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+      
+      <!-- Left: Story Narrative -->
+      <div class="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-purple-200/80 shadow-md card-aesthetic-lift reveal-on-scroll">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200 inline-block mb-4">
+          Our Story & Philosophy
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-[#180f2d] mb-4 font-display">
+          Three Dedicated Founders, Zero Middlemen.
+        </h3>
+        <div class="space-y-4 text-sm sm:text-base text-[#4e4368] leading-relaxed font-sans">
+          <p>
+            Traditional digital agencies in India have a broken model: they charge massive monthly retainers to pay for lavish commercial offices and layers of non-technical account managers, while secretly handing client projects off to unpaid interns.
+          </p>
+          <p>
+            At <strong class="text-[#1c1335] font-bold">TC Web & Studio</strong>, we tore that model down. We are three friends and specialized creators based in Mysuru — <strong class="text-purple-800">Naveen</strong> (Filmmaker & Video Director), <strong class="text-amber-800">Nidhith</strong> (Visual Identity & Poster Specialist), and <strong class="text-purple-800">Hemanth</strong> (Web Architect & Paid Ads Specialist).
+          </p>
+          <p>
+            When you partner with us, you don't speak to a middleman. You talk directly to the people writing your code, filming your commercials, designing your posters, and managing your ad campaigns.
+          </p>
+        </div>
+
+        <!-- Three Founders Portraits Strip -->
+        <div class="mt-6 pt-6 border-t border-purple-100 grid grid-cols-3 gap-3">
+          <div class="p-3 rounded-2xl bg-purple-50/70 border border-purple-200/80 text-center flex flex-col items-center group">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-purple-300 shadow-sm mb-2 group-hover:scale-105 transition-transform">
+              <img src={`${basePath}/images/founders/naveen.jpg`} alt="Naveen" class="w-full h-full object-cover object-top" loading="lazy" />
+            </div>
+            <span class="text-xs font-bold text-[#180f2d] font-display">Naveen</span>
+            <span class="text-[10px] text-purple-700 font-mono">Video & Direction</span>
+          </div>
+
+          <div class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-center flex flex-col items-center group">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-amber-300 shadow-sm mb-2 group-hover:scale-105 transition-transform">
+              <img src={`${basePath}/images/founders/nidhith.jpg`} alt="Nidhith" class="w-full h-full object-cover object-top" loading="lazy" />
+            </div>
+            <span class="text-xs font-bold text-[#180f2d] font-display">Nidhith</span>
+            <span class="text-[10px] text-amber-700 font-mono">Posters & Branding</span>
+          </div>
+
+          <div class="p-3 rounded-2xl bg-purple-50/70 border border-purple-200/80 text-center flex flex-col items-center group">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-purple-300 shadow-sm mb-2 group-hover:scale-105 transition-transform">
+              <img src={`${basePath}/images/founders/hemanth.jpg`} alt="Hemanth" class="w-full h-full object-cover object-top" loading="lazy" />
+            </div>
+            <span class="text-xs font-bold text-[#180f2d] font-display">Hemanth</span>
+            <span class="text-[10px] text-purple-700 font-mono">Web & Paid Ads</span>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-purple-100 flex flex-wrap items-center gap-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold">
+              ✓
+            </div>
+            <div>
+              <span class="block text-sm font-bold text-[#1c1335] font-display">100% Transparent</span>
+              <span class="block text-xs text-slate-500">Every rupee accounted for</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+              ⚡
+            </div>
+            <div>
+              <span class="block text-sm font-bold text-[#1c1335] font-display">Rapid Execution</span>
+              <span class="block text-xs text-slate-500">No corporate red tape</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Why Brands Choose Us (3 Core Pillars) -->
+      <div class="lg:col-span-5 space-y-4">
+        
+        <div class="p-6 rounded-2xl bg-white border border-purple-200/80 shadow-sm hover:border-purple-300 transition-all">
+          <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm mb-3">
+            01
+          </div>
+          <h4 class="text-lg font-bold text-[#1c1335] font-display mb-1">
+            Skill-First, Budget-Friendly
+          </h4>
+          <p class="text-xs sm:text-sm text-[#5a4f73] leading-relaxed">
+            Because we don't carry bloated overhead or expensive leases, our pricing is directly customizable to your budget. You pay only for real skill and actual output.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-amber-200/80 shadow-sm hover:border-amber-300 transition-all">
+          <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm mb-3">
+            02
+          </div>
+          <h4 class="text-lg font-bold text-[#1c1335] font-display mb-1">
+            Complete 360° Studio Integration
+          </h4>
+          <p class="text-xs sm:text-sm text-[#5a4f73] leading-relaxed">
+            You don't need three different vendors for your website, your reels, and your ad campaigns. We sync your branding across web, video, and social seamlessly.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-purple-200/80 shadow-sm hover:border-purple-300 transition-all">
+          <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm mb-3">
+            03
+          </div>
+          <h4 class="text-lg font-bold text-[#1c1335] font-display mb-1">
+            Authentic Partnership & WhatsApp Access
+          </h4>
+          <p class="text-xs sm:text-sm text-[#5a4f73] leading-relaxed">
+            Need an urgent poster tweak or a reel update? Text us directly on WhatsApp. We work closely with you like your dedicated in-house creative team.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Quick Studio Fact Strip -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="p-5 rounded-2xl bg-white border border-purple-200/60 shadow-sm">
+        <span class="block text-2xl sm:text-3xl font-extrabold text-purple-800 font-display">Mysuru</span>
+        <span class="text-xs text-slate-500 font-medium">Headquartered in Karnataka</span>
+      </div>
+      <div class="p-5 rounded-2xl bg-white border border-purple-200/60 shadow-sm">
+        <span class="block text-2xl sm:text-3xl font-extrabold text-amber-700 font-display">3 Founders</span>
+        <span class="text-xs text-slate-500 font-medium">Naveen, Nidhith & Hemanth</span>
+      </div>
+      <div class="p-5 rounded-2xl bg-white border border-purple-200/60 shadow-sm">
+        <span class="block text-2xl sm:text-3xl font-extrabold text-purple-800 font-display">100% In-House</span>
+        <span class="text-xs text-slate-500 font-medium">Zero sub-contracting</span>
+      </div>
+      <div class="p-5 rounded-2xl bg-white border border-purple-200/60 shadow-sm">
+        <span class="block text-2xl sm:text-3xl font-extrabold text-amber-700 font-display">Custom</span>
+        <span class="text-xs text-slate-500 font-medium">Tailored to your budget</span>
+      </div>
+    </div>
+
+  </div>
+</section>

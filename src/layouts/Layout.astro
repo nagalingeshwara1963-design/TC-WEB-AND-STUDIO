@@ -6,7 +6,7 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "TC Web & Studio — Top Digital Marketing, SEO, and Custom Web Development agency in Mysuru, Karnataka." } = Astro.props;
+const { title, description = "TC Web & Studio — Digital Marketing, Creative Posters, Video Production & Custom Web Development in Mysuru, Karnataka." } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -24,12 +24,12 @@ const { title, description = "TC Web & Studio — Top Digital Marketing, SEO, an
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 		<meta name="format-detection" content="telephone=no" />
-		<meta name="theme-color" content="#ffffff" />
+		<meta name="theme-color" content="#faf8ff" />
 		
-		<!-- Preconnect & High-Performance Typography -->
+		<!-- Preconnect & Bold Aesthetic Modern Typography -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
@@ -41,7 +41,26 @@ const { title, description = "TC Web & Studio — Top Digital Marketing, SEO, an
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 	</head>
-	<body class="min-h-screen flex flex-col font-sans bg-white text-slate-800 antialiased selection:bg-orange-500/20 selection:text-orange-950 pb-16 sm:pb-0 overflow-x-hidden">
+	<body class="min-h-screen flex flex-col font-sans bg-[#faf8ff] text-[#241c38] antialiased selection:bg-purple-200 selection:text-purple-900 pb-16 sm:pb-0 overflow-x-hidden">
 		<slot />
+
+		<script>
+			// Smooth scroll-reveal observer for elements with .reveal-on-scroll
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-revealed');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, {
+				threshold: 0.1,
+				rootMargin: '0px 0px -40px 0px'
+			});
+
+			document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+				observer.observe(el);
+			});
+		</script>
 	</body>
 </html>

@@ -1,0 +1,176 @@
+---
+// ContactSection.astro — Contact Us (With all founders' numbers, WhatsApp goes directly to Nidhith)
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const founders = [
+  {
+    name: "Naveen",
+    image: `${basePath}/images/founders/naveen.jpg`,
+    phone: "9742963370",
+    displayPhone: "+91 97429 63370",
+    role: "Creative Director & Lead Filmmaker",
+    skills: "4K Commercial Videography, Reel Direction, Visual Storytelling",
+    initials: "NV",
+    gradient: "from-purple-700 to-indigo-700"
+  },
+  {
+    name: "Nidhith",
+    image: `${basePath}/images/founders/nidhith.jpg`,
+    phone: "8197974368",
+    displayPhone: "+91 81979 74368",
+    role: "Visual Designer & Poster Architect",
+    skills: "High-Impact Posters, Typography, Visual Brand Identity",
+    initials: "ND",
+    gradient: "from-amber-600 to-orange-600",
+    isPrimaryWhatsApp: true
+  },
+  {
+    name: "Hemanth",
+    image: `${basePath}/images/founders/hemanth.jpg`,
+    phone: "9741422544",
+    displayPhone: "+91 97414 22544",
+    role: "Lead Web Architect & Paid Ads Growth",
+    skills: "Custom High-Speed Web Platforms, Meta Ads, Core Web Vitals",
+    initials: "HM",
+    gradient: "from-indigo-700 to-purple-800"
+  }
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#faf8ff] bg-subtle-grid border-b border-purple-200/60" id="contact">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100 border border-purple-200 px-4 py-1.5 rounded-full mb-3 font-display shadow-sm">
+        <span class="inline-block text-amber-500 animate-spin-slow">✦</span>
+        <span>Connect Directly With Founders</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#180f2d] tracking-tight mb-4 font-display leading-tight">
+        Get In Touch With <span class="text-gradient-purple-gold">Our Studio</span>
+      </h2>
+      <p class="text-[#4e4368] text-base sm:text-lg leading-relaxed font-sans">
+        Reach out to any of us directly. For WhatsApp inquiries and quick quotes, our team chat is managed directly by Nidhith.
+      </p>
+    </div>
+
+    <!-- ──────────────────────────────────────────────────────────
+         MASTER WHATSAPP BANNER (DIRECTLY TO NIDHITH)
+         ────────────────────────────────────────────────────────── -->
+    <div class="mb-14 p-6 sm:p-10 rounded-3xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white shadow-xl shadow-emerald-700/20 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-emerald-400/40 card-aesthetic-lift reveal-on-scroll">
+      <div>
+        <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-100 bg-emerald-800/50 px-3 py-1 rounded-full border border-emerald-400/30">
+          Fastest Response Channel
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold font-display text-white mt-2 mb-1">
+          Chat Directly on WhatsApp with Nidhith
+        </h3>
+        <p class="text-xs sm:text-sm text-emerald-100 max-w-xl">
+          Tap below to start a direct WhatsApp conversation with Nidhith (+91 81979 74368). All three founders receive lead notifications instantly!
+        </p>
+      </div>
+
+      <a 
+        href="https://wa.me/918197974368?text=Hi%20Nidhith!%20I%20would%20like%20to%20discuss%20a%20project%20with%20TC%20Web%20%26%20Studio."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 py-4 px-8 rounded-2xl bg-white hover:bg-emerald-50 text-emerald-900 font-extrabold text-sm flex items-center justify-center gap-3 transition-all shadow-lg shadow-emerald-900/20 hover:scale-105 font-display"
+      >
+        <svg class="w-5 h-5 fill-current text-emerald-600" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Open WhatsApp with Nidhith</span>
+      </a>
+    </div>
+
+    <!-- ──────────────────────────────────────────────────────────
+         THREE FOUNDERS CONTACT CARDS
+         ────────────────────────────────────────────────────────── -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      {founders.map(founder => (
+        <div class="bg-white rounded-3xl p-8 border border-purple-200/90 shadow-md hover:border-purple-300 hover:shadow-xl transition-all flex flex-col justify-between group relative overflow-hidden">
+          
+          <div>
+            <!-- Top Avatar & Founder Role -->
+            <div class="flex items-start justify-between mb-6">
+              <div class="flex items-center gap-3.5">
+                <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-purple-200 shadow-md group-hover:scale-105 transition-transform shrink-0">
+                  <img 
+                    src={founder.image} 
+                    alt={`${founder.name} — Co-Founder`} 
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-[#1c1335] font-display">
+                    {founder.name}
+                  </h3>
+                  <a href={`tel:+91${founder.phone}`} class="text-xs font-mono font-bold text-slate-500 hover:text-purple-700 transition-colors block mt-0.5">
+                    {founder.displayPhone}
+                  </a>
+                </div>
+              </div>
+              <span class="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border bg-purple-50 text-purple-800 border-purple-200">
+                Founder
+              </span>
+            </div>
+
+            <!-- Role & Skills -->
+            <div class="mb-4">
+              <span class="text-xs font-bold text-purple-900 block font-display mb-1">
+                {founder.role}
+              </span>
+              <p class="text-xs text-[#5e5377] leading-relaxed">
+                {founder.skills}
+              </p>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="mt-6 pt-5 border-t border-purple-100 flex flex-col gap-2.5">
+            <!-- Call Button -->
+            <a 
+              href={`tel:+91${founder.phone}`}
+              class="w-full py-2.5 px-4 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 text-xs font-bold font-display flex items-center justify-center gap-2 transition-colors"
+            >
+              <svg class="w-3.5 h-3.5 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <span>Call Direct: {founder.displayPhone}</span>
+            </a>
+
+            <!-- WhatsApp Action: ALWAYS goes to Nidhith as requested! -->
+            <a 
+              href={`https://wa.me/918197974368?text=Hi%20Nidhith!%20I%20would%20like%20to%20discuss%20a%20project%20with%20TC%20Web%20%26%20Studio%20(regarding%20${founder.name}'s%20work).`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-800 hover:text-white border border-emerald-200 text-xs font-bold font-display flex items-center justify-center gap-2 transition-all shadow-sm"
+              title="WhatsApp inquiry (goes to Nidhith)"
+            >
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>WhatsApp (Direct to Nidhith)</span>
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Studio Address & Working Hours -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="p-6 rounded-2xl bg-white border border-purple-200/80 shadow-sm">
+        <span class="text-2xl mb-2 block">📍</span>
+        <h4 class="text-sm font-bold text-[#1c1335] font-display">Studio Location</h4>
+        <p class="text-xs text-[#5e5377] mt-1">Mysuru, Karnataka, India</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border border-purple-200/80 shadow-sm">
+        <span class="text-2xl mb-2 block">⏰</span>
+        <h4 class="text-sm font-bold text-[#1c1335] font-display">Studio Working Hours</h4>
+        <p class="text-xs text-[#5e5377] mt-1">Mon – Sat: 9:30 AM to 8:00 PM</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border border-purple-200/80 shadow-sm">
+        <span class="text-2xl mb-2 block">💬</span>
+        <h4 class="text-sm font-bold text-[#1c1335] font-display">WhatsApp Response</h4>
+        <p class="text-xs text-[#5e5377] mt-1">Typically within 15–30 minutes</p>
+      </div>
+    </div>
+
+  </div>
+</section>

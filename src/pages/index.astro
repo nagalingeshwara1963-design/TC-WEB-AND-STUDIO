@@ -1,74 +1,51 @@
 ---
+// index.astro — TC Web & Studio (Light Purple Tint & Gold Luxury Theme)
 import Layout from '../layouts/Layout.astro';
-import TopHeader from '../components/TopHeader.astro';
 import Navbar from '../components/Navbar.astro';
 import HeroAgency from '../components/HeroAgency.astro';
-import TrustedBrands from '../components/TrustedBrands.astro';
-import KeyStatsAndServices from '../components/KeyStatsAndServices.astro';
-import GrowthCalculator from '../components/GrowthCalculator.astro';
-import DetailedServices from '../components/DetailedServices.astro';
-import HowWeWork from '../components/HowWeWork.astro';
-import IndustriesGrid from '../components/IndustriesGrid.astro';
-import ClientResultsMetrics from '../components/ClientResultsMetrics.astro';
-import FoundersTrust from '../components/FoundersTrust.astro';
-import TestimonialsReviews from '../components/TestimonialsReviews.astro';
-import LocationAndContact from '../components/LocationAndContact.astro';
-import ComprehensiveFooter from '../components/ComprehensiveFooter.astro';
-import AuditModal from '../components/AuditModal.astro';
-import FloatingActions from '../components/FloatingActions.astro';
+import AboutCompany from '../components/AboutCompany.astro';
+import TeamPortfolio from '../components/TeamPortfolio.astro';
+import ClientsSection from '../components/ClientsSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import PricingSection from '../components/PricingSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import FooterClean from '../components/FooterClean.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 ---
 
 <Layout 
-	title="TC Web & Studio | 360° Digital Marketing, Paid Ads & Creative Studio in Mysuru"
-	description="Premier Digital Marketing, Performance Paid Ads, 4K Video Production & Web Development studio in Mysuru, Karnataka. We help ambitious businesses generate qualified leads and multiply revenue."
+	title="TC Web & Studio | Digital Marketing, Custom Web & Visual Creative Studio in Mysuru"
+	description="Premier Digital Marketing, Custom Web Development, 4K Commercial Video Reels & High-Impact Poster Design in Mysuru, Karnataka. Three founders, 100% in-house craft, customized to your budget."
 >
-	<!-- Top notification and quick contact header -->
-	<TopHeader />
-
-	<!-- Main frosted glass navigation with audit triggers -->
+	<!-- Modern Frosted Glass Navigation with Purple Tint & Gold Accents -->
 	<Navbar />
 
 	<main id="main-content" class="flex-grow">
-		<!-- Hero Banner with Integrated High-Conversion Audit Form -->
+		<!-- Opening First Face: Intro + Creative Services (Left) & Get Quote Card + Muted Intro Video (Right) -->
 		<HeroAgency />
 
-		<!-- Trusted Brands / Known Clients Strip & Capability Marquee -->
-		<TrustedBrands />
+		<!-- About Us (The Company): 3-Founder Story & Skill-First Philosophy -->
+		<AboutCompany />
 
-		<!-- Value Proposition & 6 Service Jump Cards -->
-		<KeyStatsAndServices />
+		<!-- Team Portfolio: Naveen (Loop Videos), Nidhith (Posters), Hemanth (Web Designs) -->
+		<TeamPortfolio />
 
-		<!-- Interactive Growth & ROI Estimator Widget -->
-		<GrowthCalculator />
+		<!-- Clients Section: Previous & Current Clients (Authentic, No Fake Metrics) -->
+		<ClientsSection />
 
-		<!-- Deep Dive Alternating Service Breakdowns (SEO, Web, Video, Media) -->
-		<DetailedServices />
+		<!-- Services Section: Complete Breakdown of Every Creative & Digital Service -->
+		<ServicesSection />
 
-		<!-- How We Work - Dedicated 3-Pillar Agile Methodology -->
-		<HowWeWork />
+		<!-- Our Prices: Customized to Budget, Small Team Advantage, Separate Meta Ad Spend & SEO -->
+		<PricingSection />
 
-		<!-- Industries We Serve Grid -->
-		<IndustriesGrid />
-
-		<!-- Client Results & Case Studies with Measurable Metrics -->
-		<ClientResultsMetrics />
-
-		<!-- Authentic Founders Leadership & Direct Accountability -->
-		<FoundersTrust />
-
-		<!-- Client Testimonials & 5-Star Reviews -->
-		<TestimonialsReviews />
-
-		<!-- Studio Location with Mysuru Map Embed & Direct Inquiry Form -->
-		<LocationAndContact />
+		<!-- Contact Section: All 3 Founders' Direct Numbers, WhatsApp routes to Nidhith -->
+		<ContactSection />
 	</main>
 
-	<!-- Multi-column Rich Agency Footer -->
-	<ComprehensiveFooter />
+	<!-- Clean Studio Footer -->
+	<FooterClean />
 
-	<!-- Global Free Website & SEO Audit Modal -->
-	<AuditModal />
-
-	<!-- Floating WhatsApp Chat & Mobile Bottom Conversion Bar -->
-	<FloatingActions />
+	<!-- Persistent Floating WhatsApp Action directly to Nidhith -->
+	<FloatingWhatsApp />
 </Layout>
