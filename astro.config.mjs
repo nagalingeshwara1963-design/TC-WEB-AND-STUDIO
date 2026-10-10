@@ -7,6 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://nagalingeshwara1963-design.github.io',
   base: '/TC-WEB-AND-STUDIO',
+  build: {
+    assets: 'assets'
+  },
   vite: {
     plugins: [tailwindcss()]
   }
