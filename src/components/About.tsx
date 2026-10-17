@@ -50,7 +50,7 @@ export default function About() {
             <SectionHeading eyebrow="About us" title="A small studio that does the work itself." />
             <div className="space-y-4 text-base sm:text-lg text-[#43395b] leading-relaxed -mt-4">
               <p>
-                TC Web &amp; Studio is a founder-led creative and digital studio in Mysuru. We bring branding, content, video,
+                TC Web &amp; Studio is a founder-led creative and digital studio in Mysore. We bring branding, content, video,
                 photography and websites together under one roof.
               </p>
               <p>

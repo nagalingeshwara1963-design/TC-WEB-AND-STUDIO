@@ -10,16 +10,19 @@ export default function Hero() {
         <div className="text-center max-w-3xl mx-auto">
           <p className="inline-flex items-center gap-2 text-xs font-semibold text-purple-900 bg-white border border-purple-200 px-3.5 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500" aria-hidden="true"></span>
-            Creative &amp; digital studio · Mysuru, Karnataka
+            Creative &amp; digital studio · Mysore, Karnataka
           </p>
 
           <h1 className="text-[2.4rem] leading-[1.1] sm:text-6xl lg:text-7xl font-extrabold text-[#180f2d] tracking-tight font-display mb-5">
             Your budget. <span className="text-gradient-purple-gold">Our creativity.</span>
+            <span className="block mt-3 sm:mt-4 text-xl sm:text-3xl lg:text-[2rem] font-bold tracking-tight text-[#2a1650]">
+              Affordable digital marketing in Mysore.
+            </span>
           </h1>
 
           <p className="text-base sm:text-lg text-[#43395b] leading-relaxed mb-7 max-w-2xl mx-auto">
             Reels, shoots, posters, social media, websites and ads for startups, growing businesses and personal brands. Three
-            founders in Mysuru, one team for everything.
+            founders in Mysore, one team for everything.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3">

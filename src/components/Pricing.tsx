@@ -10,7 +10,7 @@ const NOTES = [
   },
   {
     title: "Travel for shoots",
-    text: "Shoots outside Mysuru are welcome anywhere in Karnataka. Travel is quoted upfront.",
+    text: "Shoots outside Mysore are welcome anywhere in Karnataka. Travel is quoted upfront.",
   },
   {
     title: "Ad spend is separate",

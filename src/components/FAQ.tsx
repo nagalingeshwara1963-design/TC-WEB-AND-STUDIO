@@ -11,8 +11,8 @@ const FAQS = [
     a: "For most work, yes. Recent iPhones film sharp, high-resolution video that's perfect for reels and social media, and it keeps your cost low. For bigger productions we can bring a pro camera setup on request.",
   },
   {
-    q: "Do you shoot outside Mysuru?",
-    a: "Yes. We're based in Mysuru and shoot anywhere in Karnataka. Travel is quoted separately and agreed before the shoot.",
+    q: "Do you shoot outside Mysore?",
+    a: "Yes. We're based in Mysore and shoot anywhere in Karnataka. Travel is quoted separately and agreed before the shoot.",
   },
   {
     q: "Can you work with clients outside Karnataka?",
@@ -36,9 +36,21 @@ const FAQS = [
   },
 ];
 
+// FAQ structured data so search engines can read the questions and answers
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function FAQ() {
   return (
     <section id="faq" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-purple-200/60">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal-on-scroll">
           <SectionHeading eyebrow="FAQ" title="Questions people often ask" />

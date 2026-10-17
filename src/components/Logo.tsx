@@ -19,7 +19,7 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
           TC Web &amp; Studio
         </span>
         <span className={`block text-[10px] font-bold uppercase tracking-[0.2em] font-mono ${dark ? "text-amber-300" : "text-amber-700"}`}>
-          Mysuru
+          Mysore
         </span>
       </span>
     </span>

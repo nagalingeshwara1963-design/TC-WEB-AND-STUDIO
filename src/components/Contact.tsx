@@ -73,7 +73,7 @@ export default function Contact() {
     { icon: <WhatsAppIcon />, label: "WhatsApp", value: "Chat with us", href: whatsappLink(), external: true },
     { icon: <InstagramIcon />, label: "Instagram", value: `@${INSTAGRAM_HANDLE}`, href: INSTAGRAM_URL, external: true },
     { icon: <MailIcon />, label: "Email", value: EMAIL, href: `mailto:${EMAIL}`, external: false },
-    { icon: <PinIcon />, label: "Location", value: "Mysuru, Karnataka", href: null, external: false },
+    { icon: <PinIcon />, label: "Location", value: "Mysore, Karnataka", href: null, external: false },
   ];
 
   return (
@@ -182,7 +182,7 @@ export default function Contact() {
                     type="text"
                     value={shootLocation}
                     onChange={(e) => setShootLocation(e.target.value)}
-                    placeholder="e.g. Mysuru"
+                    placeholder="e.g. Mysore"
                     className={inputClass}
                   />
                 </div>

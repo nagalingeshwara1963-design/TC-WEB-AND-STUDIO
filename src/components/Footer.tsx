@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-1">
             <Logo dark />
-            <p className="mt-4 text-sm leading-relaxed">A founder-led creative and digital studio in Mysuru, Karnataka.</p>
+            <p className="mt-4 text-sm leading-relaxed">A founder-led creative and digital studio in Mysore, Karnataka.</p>
           </div>
 
           <div>
