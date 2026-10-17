@@ -34,12 +34,12 @@ jobs:
       - name: Build site
         run: |
           npm run build
-          touch ./dist/.nojekyll
+          touch ./out/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./out
 
   deploy:
     name: Deploy to GitHub Pages
