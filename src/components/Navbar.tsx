@@ -29,12 +29,12 @@ export default function Navbar() {
           </a>
 
           {/* Desktop links */}
-          <ul className="hidden lg:flex items-center gap-1">
+          <ul className="hidden xl:flex items-center gap-0.5">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="px-3.5 py-2 text-sm font-semibold text-[#3c3252] hover:text-purple-700 rounded-lg transition-colors font-display"
+                  className="px-3 py-2 text-sm font-semibold text-[#3c3252] hover:text-purple-700 rounded-lg transition-colors font-display"
                 >
                   {link.label}
                 </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen((open) => !open)}
-              className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-purple-200 bg-white text-[#1c1335] cursor-pointer"
+              className="xl:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-purple-200 bg-white text-[#1c1335] cursor-pointer"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div id="mobile-menu" className="lg:hidden pb-4">
+          <div id="mobile-menu" className="xl:hidden pb-4">
             <ul className="flex flex-col border-t border-purple-100 pt-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>

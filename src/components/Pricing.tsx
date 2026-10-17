@@ -5,6 +5,14 @@ import { whatsappLink } from "@/lib/site";
 const NOTES = [
   { title: "Custom quote", text: "Every project is quoted on what you actually need." },
   {
+    title: "iPhone shoots keep it low",
+    text: "Most shoots are filmed on iPhone to keep costs down. A pro camera setup is available on request.",
+  },
+  {
+    title: "Travel for shoots",
+    text: "Shoots outside Mysuru are welcome anywhere in Karnataka. Travel is quoted upfront.",
+  },
+  {
     title: "Ad spend is separate",
     text: "Your ad budget is paid directly by you to Meta or Google. Our fee covers the creative and management.",
   },

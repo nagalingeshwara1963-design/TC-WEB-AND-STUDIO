@@ -20,20 +20,23 @@ const POINTS = [
 const FOUNDERS = [
   {
     name: "Naveen",
-    role: "Video & Motion",
-    text: "Videography, photography, video editing and motion graphics.",
+    role: "Cinematography & Editing",
+    text: "Pre-wedding films, car delivery shoots, events, photography and video editing.",
+    tags: ["Cinematography", "Pre-wedding", "Car delivery", "Editing"],
     photo: "naveen-face.jpg",
   },
   {
     name: "Nidhith",
-    role: "Design & Social",
-    text: "Posters and graphic design, content planning and social media.",
+    role: "Social Media & Design",
+    text: "Poster design, content planning, brochures and ads, and business promotion.",
+    tags: ["Posters", "Content planning", "Brochures & ads", "Promotion"],
     photo: "nidhith-face.jpg",
   },
   {
     name: "Hemanth",
-    role: "Websites & SEO",
-    text: "Website development and search engine optimisation.",
+    role: "Web Design, Development & SEO",
+    text: "Websites, SEO, content planning and client management.",
+    tags: ["Websites", "SEO", "Content planning", "Client management"],
     photo: null,
   },
 ];
@@ -91,6 +94,13 @@ export default function About() {
               <h4 className="mt-4 text-lg font-bold text-[#180f2d] font-display">{f.name}</h4>
               <p className="text-xs font-bold uppercase tracking-wider text-amber-700 font-mono mt-1">{f.role}</p>
               <p className="mt-3 text-sm text-[#5e5377] leading-relaxed">{f.text}</p>
+              <ul className="mt-4 flex flex-wrap justify-center gap-1.5">
+                {f.tags.map((tag) => (
+                  <li key={tag} className="text-[11px] font-semibold text-purple-800 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-md">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>

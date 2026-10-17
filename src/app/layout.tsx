@@ -11,27 +11,36 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH;
+const TITLE = "TC Web & Studio | Reels, Shoots, Websites & Ads in Mysuru";
+const DESCRIPTION =
+  "Reels, pre-wedding and event shoots, car delivery videos, posters, social media, websites and ads for startups, growing businesses and personal brands. Three founders in Mysuru. Your budget, our creativity.";
+const SHARE_IMAGE = `${BASE}/og-image.jpg`;
+
 export const metadata: Metadata = {
-  title: "TC Web & Studio | Digital Marketing, Custom Web & Visual Creative Studio in Mysuru",
-  description:
-    "Premier Digital Marketing, Custom Web Development, 4K Commercial Video Reels & High-Impact Poster Design in Mysuru, Karnataka. Three founders, 100% in-house craft, customized to your budget.",
+  metadataBase: new URL("https://nagalingeshwara1963-design.github.io"),
+  title: TITLE,
+  description: DESCRIPTION,
   icons: {
     icon: [
-      { url: `${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico` },
-      { url: `${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.svg`, type: "image/svg+xml" },
+      { url: `${BASE}/favicon.ico`, sizes: "48x48" },
+      { url: `${BASE}/icon-512.png`, type: "image/png", sizes: "512x512" },
     ],
+    apple: `${BASE}/apple-touch-icon.png`,
   },
   openGraph: {
     type: "website",
-    title: "TC Web & Studio | Digital Marketing, Custom Web & Visual Creative Studio in Mysuru",
-    description:
-      "Premier Digital Marketing, Custom Web Development, 4K Commercial Video Reels & High-Impact Poster Design in Mysuru, Karnataka. Three founders, 100% in-house craft, customized to your budget.",
+    url: `${BASE}/`,
+    siteName: "TC Web & Studio",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: SHARE_IMAGE, width: 1200, height: 630, alt: "TC Web & Studio logo" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TC Web & Studio | Digital Marketing, Custom Web & Visual Creative Studio in Mysuru",
-    description:
-      "Premier Digital Marketing, Custom Web Development, 4K Commercial Video Reels & High-Impact Poster Design in Mysuru, Karnataka. Three founders, 100% in-house craft, customized to your budget.",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [SHARE_IMAGE],
   },
 };
 

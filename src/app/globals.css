@@ -327,28 +327,19 @@
 }
 
 /* ─────────────────────────────────────────
-   CLIENT LOGO ROW (slow scroll, pauses on hover)
+   CLIENT LOGO ROW (auto-scroll, swipe and drag)
 ───────────────────────────────────────── */
-@keyframes marquee-scroll {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
+.client-row {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.marquee {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 70s linear infinite;
-  will-change: transform;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
+.client-row::-webkit-scrollbar {
+  display: none;
 }
 
 /* Turn all motion off for visitors who ask for reduced motion */
@@ -361,10 +352,6 @@
     opacity: 1;
     transform: none;
     transition: none;
-  }
-
-  .marquee-track {
-    animation: none;
   }
 
   *, *::before, *::after {

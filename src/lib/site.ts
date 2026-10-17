@@ -8,24 +8,40 @@ export function whatsappLink(message: string = DEFAULT_WA_MESSAGE) {
 }
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const SITE_ORIGIN = "https://nagalingeshwara1963-design.github.io";
 
 export const INSTAGRAM_HANDLE = "tc_web_and_studio";
 export const INSTAGRAM_URL = "https://www.instagram.com/tc_web_and_studio/";
 export const EMAIL = "tcworksmysore@gmail.com";
 
 export const NAV_LINKS = [
-  { href: "#about", label: "About" },
+  { href: "#shoots", label: "Shoots" },
   { href: "#services", label: "Services" },
-  { href: "#how-we-work", label: "How we work" },
+  { href: "#who-we-work-with", label: "Who we work with" },
+  { href: "#about", label: "About" },
   { href: "#pricing", label: "Pricing" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
 
 export const SERVICE_NAMES = [
-  "Websites",
-  "Social media",
-  "Video reels & shoots",
+  "Reels & content creation",
+  "Photo & video shoots",
+  "Social media management",
   "Posters & branding",
-  "Meta & Google ads",
+  "Digital marketing & ads",
+  "Websites",
   "SEO",
+  "Personal brand profiles",
+];
+
+export const SHOOT_TYPES = [
+  "Pre-wedding shoot",
+  "Wedding / engagement",
+  "Birthday / family event",
+  "Personal portfolio",
+  "Car / bike delivery",
+  "Product / food shoot",
+  "Store opening / event",
+  "Property / interiors",
 ];
