@@ -50,7 +50,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-[#faf8ff] text-[#241c38] antialiased selection:bg-purple-200 selection:text-purple-900 pb-16 sm:pb-0 overflow-x-hidden">
+      <body className="min-h-screen flex flex-col font-sans bg-[#faf8ff] text-[#241c38] antialiased selection:bg-purple-200 selection:text-purple-900 overflow-x-clip">
         {children}
         <FloatingWhatsApp />
         <ScrollRevealObserver />
