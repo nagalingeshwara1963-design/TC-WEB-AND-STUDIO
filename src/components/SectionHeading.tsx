@@ -1,4 +1,5 @@
 import React from "react";
+import Eyebrow from "./Eyebrow";
 
 export default function SectionHeading({
   eyebrow,
@@ -13,9 +14,7 @@ export default function SectionHeading({
 }) {
   return (
     <div className={`mb-10 sm:mb-12 ${center ? "text-center mx-auto" : ""} max-w-2xl`}>
-      <p className={`text-xs font-bold uppercase tracking-[0.18em] font-mono mb-3 ${dark ? "text-amber-300" : "text-amber-700"}`}>
-        {eyebrow}
-      </p>
+      <Eyebrow dark={dark}>{eyebrow}</Eyebrow>
       <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight font-display ${dark ? "text-white" : "text-[#180f2d]"}`}>
         {title}
       </h2>

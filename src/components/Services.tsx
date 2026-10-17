@@ -1,5 +1,6 @@
 import React from "react";
 import SectionHeading from "./SectionHeading";
+import { BASE_PATH } from "@/lib/site";
 
 const SERVICES = [
   {
@@ -26,6 +27,7 @@ const SERVICES = [
     title: "Digital marketing & ads",
     text: "Meta and Google ad campaigns set up and managed for enquiries, calls and WhatsApp leads.",
     tags: ["Facebook & Instagram", "Google Ads"],
+    slug: "digital-marketing-mysore",
   },
   {
     title: "Websites",
@@ -58,6 +60,14 @@ export default function Services() {
               <span className="text-sm font-bold text-amber-700 font-mono mb-3">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="text-lg font-bold text-[#180f2d] font-display mb-2">{service.title}</h3>
               <p className="text-sm text-[#5e5377] leading-relaxed mb-5">{service.text}</p>
+              {"slug" in service && service.slug && (
+                <a
+                  href={`${BASE_PATH}/${service.slug}/`}
+                  className="-mt-2 mb-5 inline-flex items-center gap-1 text-sm font-bold text-purple-800 hover:text-purple-600 underline-offset-4 hover:underline"
+                >
+                  Learn more <span aria-hidden="true">&rarr;</span>
+                </a>
+              )}
               <ul className="mt-auto flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
                   <li key={tag} className="text-xs font-semibold text-purple-800 bg-white border border-purple-200 px-2.5 py-1 rounded-md">

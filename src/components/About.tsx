@@ -92,7 +92,7 @@ export default function About() {
                 </span>
               )}
               <h4 className="mt-4 text-lg font-bold text-[#180f2d] font-display">{f.name}</h4>
-              <p className="text-xs font-bold uppercase tracking-wider text-amber-700 font-mono mt-1">{f.role}</p>
+              <p className="text-sm font-bold text-amber-700 font-display mt-1">{f.role}</p>
               <p className="mt-3 text-sm text-[#5e5377] leading-relaxed">{f.text}</p>
               <ul className="mt-4 flex flex-wrap justify-center gap-1.5">
                 {f.tags.map((tag) => (

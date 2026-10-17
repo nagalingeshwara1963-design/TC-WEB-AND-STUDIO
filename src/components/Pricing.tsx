@@ -1,5 +1,6 @@
 import React from "react";
 import { WhatsAppIcon } from "./Icons";
+import Eyebrow from "./Eyebrow";
 import { whatsappLink } from "@/lib/site";
 
 const NOTES = [
@@ -29,7 +30,7 @@ export default function Pricing() {
         <div className="rounded-3xl bg-gradient-to-br from-[#2a1650] via-[#24123f] to-[#1c1335] p-6 sm:p-10 lg:p-12 text-white reveal-on-scroll">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             <div className="lg:col-span-2">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] font-mono mb-3 text-amber-300">Pricing</p>
+              <Eyebrow dark>Pricing</Eyebrow>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight font-display text-white mb-4">
                 Priced to your budget.
               </h2>

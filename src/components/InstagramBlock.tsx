@@ -1,5 +1,6 @@
 import React from "react";
 import { InstagramIcon } from "./Icons";
+import Eyebrow from "./Eyebrow";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/site";
 
 export default function InstagramBlock() {
@@ -8,7 +9,7 @@ export default function InstagramBlock() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
         <div className="rounded-3xl bg-gradient-to-r from-purple-50 via-white to-amber-50 border border-purple-200 p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] font-mono mb-2 text-amber-700">Our latest work</p>
+            <Eyebrow>Our latest work</Eyebrow>
             <h2 id="instagram-heading" className="text-2xl sm:text-3xl font-extrabold tracking-tight font-display text-[#180f2d]">
               See our reels and shoots on Instagram
             </h2>

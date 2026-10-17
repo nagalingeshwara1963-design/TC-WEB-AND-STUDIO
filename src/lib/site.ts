@@ -14,14 +14,15 @@ export const INSTAGRAM_HANDLE = "tc_web_and_studio";
 export const INSTAGRAM_URL = "https://www.instagram.com/tc_web_and_studio/";
 export const EMAIL = "tcworksmysore@gmail.com";
 
+// Full paths so the links also work from the service pages
 export const NAV_LINKS = [
-  { href: "#shoots", label: "Shoots" },
-  { href: "#services", label: "Services" },
-  { href: "#who-we-work-with", label: "Who we work with" },
-  { href: "#about", label: "About" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+  { href: `${BASE_PATH}/#shoots`, label: "Shoots" },
+  { href: `${BASE_PATH}/#services`, label: "Services" },
+  { href: `${BASE_PATH}/#who-we-work-with`, label: "Who we work with" },
+  { href: `${BASE_PATH}/#about`, label: "About" },
+  { href: `${BASE_PATH}/#pricing`, label: "Pricing" },
+  { href: `${BASE_PATH}/#faq`, label: "FAQ" },
+  { href: `${BASE_PATH}/#contact`, label: "Contact" },
 ];
 
 export const SERVICE_NAMES = [

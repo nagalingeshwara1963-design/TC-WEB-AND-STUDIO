@@ -1,7 +1,8 @@
 import React from "react";
 import Logo from "./Logo";
 import { InstagramIcon, MailIcon } from "./Icons";
-import { EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, NAV_LINKS, SERVICE_NAMES } from "@/lib/site";
+import { BASE_PATH, EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, NAV_LINKS, SERVICE_NAMES } from "@/lib/site";
+import { SERVICE_PAGES } from "@/lib/servicePages";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -33,6 +34,16 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {SERVICE_NAMES.map((name) => (
                 <li key={name}>{name}</li>
+              ))}
+            </ul>
+            <h2 className="text-sm font-bold text-white font-display mt-6 mb-3">Popular in Mysore</h2>
+            <ul className="space-y-1">
+              {SERVICE_PAGES.map((page) => (
+                <li key={page.slug}>
+                  <a href={`${BASE_PATH}/${page.slug}/`} className="inline-flex items-center min-h-[36px] text-sm hover:text-white underline-offset-4 hover:underline transition-colors">
+                    {page.navLabel}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>

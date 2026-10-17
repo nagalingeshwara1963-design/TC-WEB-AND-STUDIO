@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { WhatsAppIcon } from "./Icons";
-import { NAV_LINKS, whatsappLink } from "@/lib/site";
+import { BASE_PATH, NAV_LINKS, whatsappLink } from "@/lib/site";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 bg-[#faf8ff]/95 backdrop-blur-md border-b border-purple-200/60 pt-[env(safe-area-inset-top)]">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main">
         <div className="flex items-center justify-between h-16 sm:h-[4.5rem]">
-          <a href="#hero" onClick={close} aria-label="TC Web & Studio, back to top">
+          <a href={`${BASE_PATH}/`} onClick={close} aria-label="TC Web & Studio, back to top">
             <Logo />
           </a>
 
