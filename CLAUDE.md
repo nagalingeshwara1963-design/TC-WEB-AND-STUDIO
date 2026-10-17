@@ -20,3 +20,10 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Strict Project Guidelines (User Locked)
+
+- **Locked Base State**: The current luxury light theme (`#faf8ff`), typography, gold accents, centered cinema showcase, circular founder headshots, and preview modal are fully approved and locked.
+- **Strict Scope Constraint**: Only change **strictly and exactly** what the user explicitly requests in each prompt. Do not modify or refactor any unrelated components, styles, copy, or files.
+- **Mandatory Confirmation**: Always ask the user for confirmation first if any other element, file, or component needs to be touched.
+
