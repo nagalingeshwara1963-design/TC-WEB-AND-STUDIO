@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Card3DTilt from "./Card3DTilt";
 
 export default function TeamPortfolio() {
   const [filter, setFilter] = useState<"all" | "web" | "posters">("all");
@@ -12,7 +11,7 @@ export default function TeamPortfolio() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100 border border-purple-200 px-4 py-1.5 rounded-full mb-3 font-display shadow-sm">
-            <span className="inline-block text-amber-500 animate-spin-slow">✦</span>
+            <span className="inline-block text-amber-500">✦</span>
             <span>Selected Studio Work</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#180f2d] tracking-tight mb-3 font-display leading-tight">
@@ -88,7 +87,7 @@ export default function TeamPortfolio() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Web Design 1: E-Commerce */}
-              <Card3DTilt maxTilt={8} glare={true} className="rounded-2xl h-full">
+              <div className="rounded-2xl h-full">
                 <div className="rounded-2xl border border-purple-200 overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="bg-slate-100 px-3.5 py-2.5 border-b border-purple-200/80 flex items-center gap-2">
                     <div className="flex items-center gap-1.5">
@@ -126,10 +125,10 @@ export default function TeamPortfolio() {
                     </div>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
 
               {/* Web Design 2: Agency & Portfolio Platform */}
-              <Card3DTilt maxTilt={8} glare={true} className="rounded-2xl h-full">
+              <div className="rounded-2xl h-full">
                 <div className="rounded-2xl border border-purple-200 overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="bg-slate-100 px-3.5 py-2.5 border-b border-purple-200/80 flex items-center gap-2">
                     <div className="flex items-center gap-1.5">
@@ -167,10 +166,10 @@ export default function TeamPortfolio() {
                     </div>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
 
               {/* Web Design 3: Inbound Lead Engine */}
-              <Card3DTilt maxTilt={8} glare={true} className="rounded-2xl h-full">
+              <div className="rounded-2xl h-full">
                 <div className="rounded-2xl border border-purple-200 overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="bg-slate-100 px-3.5 py-2.5 border-b border-purple-200/80 flex items-center gap-2">
                     <div className="flex items-center gap-1.5">
@@ -208,7 +207,7 @@ export default function TeamPortfolio() {
                     </div>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
             </div>
           </div>
         )}
@@ -243,7 +242,7 @@ export default function TeamPortfolio() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Poster 1 */}
-              <Card3DTilt maxTilt={12} glare={true} className="rounded-2xl h-full">
+              <div className="rounded-2xl h-full">
                 <div className="rounded-2xl overflow-hidden border border-amber-200 bg-white shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="aspect-[4/5] bg-gradient-to-br from-purple-900 via-indigo-950 to-amber-950 p-6 flex flex-col justify-between relative overflow-hidden">
                     <div className="absolute -right-10 -bottom-10 w-36 h-36 bg-amber-500/20 rounded-full blur-2xl"></div>
@@ -272,10 +271,10 @@ export default function TeamPortfolio() {
                     <span className="text-[10px] text-slate-500 font-sans">Print & Social Ready</span>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
 
               {/* Poster 2 */}
-              <Card3DTilt maxTilt={12} glare={true} className="rounded-2xl h-full">
+              <div className="rounded-2xl h-full">
                 <div className="rounded-2xl overflow-hidden border border-amber-200 bg-white shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="aspect-[4/5] bg-gradient-to-br from-amber-900 via-yellow-950 to-stone-900 p-6 flex flex-col justify-between relative overflow-hidden">
                     <div className="absolute -left-10 -top-10 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl"></div>
@@ -304,10 +303,10 @@ export default function TeamPortfolio() {
                     <span className="text-[10px] text-slate-500 font-sans">Print & Social Ready</span>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
 
               {/* Poster 3 */}
-              <Card3DTilt maxTilt={12} glare={true} className="rounded-2xl h-full">
+              <div className="rounded-2xl h-full">
                 <div className="rounded-2xl overflow-hidden border border-amber-200 bg-white shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="aspect-[4/5] bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-900 p-6 flex flex-col justify-between relative overflow-hidden">
                     <div className="absolute -right-8 -top-8 w-36 h-36 bg-purple-500/25 rounded-full blur-2xl"></div>
@@ -336,10 +335,10 @@ export default function TeamPortfolio() {
                     <span className="text-[10px] text-slate-500 font-sans">Print & Social Ready</span>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
 
               {/* Poster 4 */}
-              <Card3DTilt maxTilt={12} glare={true} className="rounded-2xl h-full">
+              <div className="rounded-2xl h-full">
                 <div className="rounded-2xl overflow-hidden border border-amber-200 bg-white shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
                   <div className="aspect-[4/5] bg-gradient-to-br from-rose-950 via-purple-950 to-stone-900 p-6 flex flex-col justify-between relative overflow-hidden">
                     <div className="absolute -left-8 -bottom-8 w-36 h-36 bg-rose-500/20 rounded-full blur-2xl"></div>
@@ -368,7 +367,7 @@ export default function TeamPortfolio() {
                     <span className="text-[10px] text-slate-500 font-sans">Print & Social Ready</span>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
             </div>
           </div>
         )}

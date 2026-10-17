@@ -45,7 +45,7 @@ export default function ContactSection() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100 border border-purple-200 px-4 py-1.5 rounded-full mb-3 font-display shadow-sm">
-            <span className="inline-block text-amber-500 animate-spin-slow">✦</span>
+            <span className="inline-block text-amber-500">✦</span>
             <span>Get In Touch</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#180f2d] tracking-tight mb-3 font-display leading-tight">
@@ -59,7 +59,7 @@ export default function ContactSection() {
         {/* ──────────────────────────────────────────────────────────
              MASTER WHATSAPP BANNER
              ────────────────────────────────────────────────────────── */}
-        <div className="mb-12 p-6 sm:p-10 rounded-3xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white shadow-xl shadow-emerald-700/20 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-emerald-400/40 card-aesthetic-lift reveal-on-scroll">
+        <div className="mb-12 p-6 sm:p-10 rounded-3xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white shadow-xl shadow-emerald-700/20 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-emerald-400/40 reveal-on-scroll">
           <div>
             <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-100 bg-emerald-800/50 px-3 py-1 rounded-full border border-emerald-400/30">
               Fastest Response Channel
@@ -76,7 +76,7 @@ export default function ContactSection() {
             href="https://wa.me/918197974368?text=Hi!%20I%20would%20like%20to%20discuss%20a%20project%20with%20TC%20Web%20%26%20Studio."
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 py-4 px-8 rounded-2xl bg-white hover:bg-emerald-50 text-emerald-900 font-extrabold text-sm flex items-center justify-center gap-3 transition-all shadow-lg shadow-emerald-900/20 hover:scale-105 font-display"
+            className="shrink-0 py-4 px-8 rounded-2xl bg-white hover:bg-emerald-50 text-emerald-900 font-extrabold text-sm flex items-center justify-center gap-3 transition-all shadow-lg shadow-emerald-900/20 font-display"
           >
             <svg className="w-5 h-5 fill-current text-emerald-600" viewBox="0 0 24 24">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />

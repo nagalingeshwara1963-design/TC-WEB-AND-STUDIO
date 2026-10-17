@@ -132,7 +132,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-flow 6s ease infinite;
 }
 
 .text-gradient-purple {
@@ -141,7 +140,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-flow 7s ease infinite;
 }
 
 .text-gradient-gold {
@@ -150,7 +148,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-flow 6s ease infinite;
 }
 
 /* ─────────────────────────────────────────
@@ -241,7 +238,6 @@
 
 .btn-gold-luxury:hover {
   background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
-  transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
 }
 
@@ -264,7 +260,6 @@
 
 .btn-purple-luxury:hover {
   background: linear-gradient(135deg, #581c87 0%, #6b21a8 100%);
-  transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
 }
 
@@ -285,7 +280,6 @@
 
 .btn-whatsapp-pill:hover {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
 }
 
@@ -297,7 +291,6 @@
 }
 
 .card-aesthetic-lift:hover {
-  transform: translateY(-5px);
   box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.12), 0 0 0 1px rgba(124, 58, 237, 0.25);
 }
 

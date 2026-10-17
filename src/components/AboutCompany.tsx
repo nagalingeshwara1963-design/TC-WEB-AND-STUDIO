@@ -6,13 +6,13 @@ export default function AboutCompany() {
   return (
     <section className="py-20 lg:py-24 bg-[#faf8ff] relative overflow-hidden border-b border-purple-200/60" id="about">
       {/* Subtle ambient decorative glow */}
-      <div className="absolute -top-10 right-1/4 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl pointer-events-none animate-float-slow"></div>
+      <div className="absolute -top-10 right-1/4 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100 border border-purple-200 px-4 py-1.5 rounded-full mb-3 font-display shadow-sm">
-            <span className="inline-block text-amber-500 animate-spin-slow">✦</span>
+            <span className="inline-block text-amber-500">✦</span>
             <span>About The Studio</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#180f2d] tracking-tight mb-3 font-display leading-tight">

@@ -97,7 +97,7 @@ export default function FooterClean() {
                   <strong className="text-purple-950 font-display block">Web Architecture</strong>
                   <span className="text-[11px] text-slate-500">Custom sites & portals</span>
                 </div>
-                <span className="text-xs text-purple-700 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span className="text-xs text-purple-700 font-bold transition-transform">
                   Inquire &rarr;
                 </span>
               </a>
@@ -112,7 +112,7 @@ export default function FooterClean() {
                   <strong className="text-amber-950 font-display block">Posters & Visual Design</strong>
                   <span className="text-[11px] text-slate-500">Print, social & menu graphics</span>
                 </div>
-                <span className="text-xs text-amber-800 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span className="text-xs text-amber-800 font-bold transition-transform">
                   Inquire &rarr;
                 </span>
               </a>
@@ -127,7 +127,7 @@ export default function FooterClean() {
                   <strong className="text-purple-950 font-display block">Digital Marketing & Ads</strong>
                   <span className="text-[11px] text-slate-500">Meta/Google ad funnels</span>
                 </div>
-                <span className="text-xs text-purple-700 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span className="text-xs text-purple-700 font-bold transition-transform">
                   Inquire &rarr;
                 </span>
               </a>

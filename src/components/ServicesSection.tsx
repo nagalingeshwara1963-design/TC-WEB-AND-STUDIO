@@ -1,5 +1,4 @@
 import React from "react";
-import Card3DTilt from "./Card3DTilt";
 
 export default function ServicesSection() {
   return (
@@ -8,7 +7,7 @@ export default function ServicesSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100 border border-purple-200 px-4 py-1.5 rounded-full mb-3 font-display shadow-sm">
-            <span className="inline-block text-amber-500 animate-spin-slow">✦</span>
+            <span className="inline-block text-amber-500">✦</span>
             <span>Full Studio Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#180f2d] tracking-tight mb-4 font-display leading-tight">
@@ -22,10 +21,10 @@ export default function ServicesSection() {
         {/* Services Grid (6 Core Offerings with 3D Interaction) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Service 1: Digital Marketing & Meta Ads */}
-          <Card3DTilt maxTilt={10} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-8 border border-purple-200/80 shadow-sm hover:border-purple-400 hover:shadow-xl transition-all flex flex-col justify-between group h-full preserve-3d">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 group-hover:translate-z-6 transition-all duration-300 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center text-2xl font-bold mb-6 transition-all duration-300 shadow-inner">
                   🚀
                 </div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">
@@ -67,13 +66,13 @@ export default function ServicesSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* Service 2: Custom Web Development */}
-          <Card3DTilt maxTilt={10} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-8 border border-purple-200/80 shadow-sm hover:border-amber-400 hover:shadow-xl transition-all flex flex-col justify-between group h-full preserve-3d">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 group-hover:translate-z-6 transition-all duration-300 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold mb-6 transition-all duration-300 shadow-inner">
                   💻
                 </div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
@@ -115,13 +114,13 @@ export default function ServicesSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* Service 3: 4K Commercial Video & Viral Reels */}
-          <Card3DTilt maxTilt={10} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-8 border border-purple-200/80 shadow-sm hover:border-purple-400 hover:shadow-xl transition-all flex flex-col justify-between group h-full preserve-3d">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 group-hover:translate-z-6 transition-all duration-300 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center text-2xl font-bold mb-6 transition-all duration-300 shadow-inner">
                   🎬
                 </div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">
@@ -163,13 +162,13 @@ export default function ServicesSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* Service 4: Graphic Design & Posters */}
-          <Card3DTilt maxTilt={10} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-8 border border-purple-200/80 shadow-sm hover:border-amber-400 hover:shadow-xl transition-all flex flex-col justify-between group h-full preserve-3d">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 group-hover:translate-z-6 transition-all duration-300 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold mb-6 transition-all duration-300 shadow-inner">
                   🎨
                 </div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
@@ -211,13 +210,13 @@ export default function ServicesSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* Service 5: Search Engine Optimization (SEO) */}
-          <Card3DTilt maxTilt={10} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-8 border border-purple-200/80 shadow-sm hover:border-purple-400 hover:shadow-xl transition-all flex flex-col justify-between group h-full preserve-3d">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 group-hover:translate-z-6 transition-all duration-300 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center text-2xl font-bold mb-6 transition-all duration-300 shadow-inner">
                   🔍
                 </div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">
@@ -259,13 +258,13 @@ export default function ServicesSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* Service 6: Brand Identity & Social Direction */}
-          <Card3DTilt maxTilt={10} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-8 border border-purple-200/80 shadow-sm hover:border-amber-400 hover:shadow-xl transition-all flex flex-col justify-between group h-full preserve-3d">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 group-hover:translate-z-6 transition-all duration-300 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold mb-6 transition-all duration-300 shadow-inner">
                   📱
                 </div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
@@ -307,7 +306,7 @@ export default function ServicesSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
         </div>
       </div>
     </section>

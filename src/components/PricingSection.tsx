@@ -1,5 +1,4 @@
 import React from "react";
-import Card3DTilt from "./Card3DTilt";
 
 export default function PricingSection() {
   return (
@@ -8,7 +7,7 @@ export default function PricingSection() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-amber-900 bg-amber-50 border border-amber-200 px-4 py-1.5 rounded-full mb-3 font-display shadow-sm">
-            <span className="inline-block text-amber-500 animate-spin-slow">✦</span>
+            <span className="inline-block text-amber-500">✦</span>
             <span>Transparent Pricing</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#180f2d] tracking-tight mb-3 font-display leading-tight">
@@ -22,7 +21,7 @@ export default function PricingSection() {
         {/* ──────────────────────────────────────────────────────────
              THE STUDIO ADVANTAGE
              ────────────────────────────────────────────────────────── */}
-        <div className="mb-12 bg-gradient-to-br from-purple-900 via-[#1c1335] to-amber-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden card-aesthetic-lift reveal-on-scroll">
+        <div className="mb-12 bg-gradient-to-br from-purple-900 via-[#1c1335] to-amber-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden reveal-on-scroll">
           <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-500/25 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl">
@@ -64,7 +63,7 @@ export default function PricingSection() {
              ────────────────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
           {/* Meta Ad Campaign Costs Card */}
-          <Card3DTilt maxTilt={6} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-7 border border-purple-200/90 shadow-sm flex flex-col justify-between h-full">
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -85,10 +84,10 @@ export default function PricingSection() {
                 </div>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* SEO Campaign Costs Card */}
-          <Card3DTilt maxTilt={6} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-7 border border-amber-200/90 shadow-sm flex flex-col justify-between h-full">
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -109,7 +108,7 @@ export default function PricingSection() {
                 </div>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
         </div>
 
         {/* ──────────────────────────────────────────────────────────
@@ -126,7 +125,7 @@ export default function PricingSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Framework 1: Starter Creative */}
-          <Card3DTilt maxTilt={8} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-7 border border-purple-200/80 shadow-sm flex flex-col justify-between h-full">
               <div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
@@ -168,10 +167,10 @@ export default function PricingSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* Framework 2: Custom Web Launch (Featured) */}
-          <Card3DTilt maxTilt={10} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-7 border-2 border-amber-400 shadow-lg relative flex flex-col justify-between h-full">
               <div className="absolute -top-3 right-6 bg-gradient-to-r from-amber-600 to-amber-500 text-white text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow-sm z-20">
                 Most Popular
@@ -221,10 +220,10 @@ export default function PricingSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
 
           {/* Framework 3: Growth Suite */}
-          <Card3DTilt maxTilt={8} glare={true} className="rounded-3xl h-full">
+          <div className="rounded-3xl h-full">
             <div className="bg-white rounded-3xl p-7 border border-purple-200/80 shadow-sm flex flex-col justify-between h-full">
               <div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
@@ -270,7 +269,7 @@ export default function PricingSection() {
                 </a>
               </div>
             </div>
-          </Card3DTilt>
+          </div>
         </div>
 
         {/* Final Direct WhatsApp Budget Consultation Callout */}

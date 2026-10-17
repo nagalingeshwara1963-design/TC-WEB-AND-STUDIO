@@ -36,10 +36,10 @@ export default function Navbar() {
             className="flex items-center gap-3.5 group focus:outline-none"
             aria-label="TC Web & Studio Home"
           >
-            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-700 via-purple-600 to-amber-600 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-purple-600/20 group-hover:scale-105 transition-all duration-200 font-display border border-amber-300/40">
+            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-700 via-purple-600 to-amber-600 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-purple-600/20 transition-all duration-200 font-display border border-amber-300/40">
               TC
               <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-amber-400 border-2 border-white rounded-full flex items-center justify-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-ping"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
               </span>
             </div>
             <div>

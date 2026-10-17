@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ThreeDBackground from "./ThreeDBackground";
-import Card3DTilt from "./Card3DTilt";
+import IntroVideo from "./IntroVideo";
 
 export default function HeroAgency() {
   // Quote form state
@@ -35,13 +34,11 @@ Project Details: ${notes.trim() || "Not specified"}`;
 
   return (
     <section className="relative pt-12 pb-20 lg:pt-16 lg:pb-24 bg-[#faf8ff] bg-purple-mesh border-b border-purple-200/60 overflow-hidden" id="hero">
-      {/* Interactive 3D WebGL Floating Crystals & Particle Galaxy */}
-      <ThreeDBackground className="opacity-80" />
 
       {/* Aesthetic Floating Decorative Ambient Orbs */}
-      <div className="absolute -top-12 left-1/4 w-[34rem] h-[34rem] bg-purple-300/35 rounded-full blur-3xl pointer-events-none animate-float-slow"></div>
-      <div className="absolute top-28 -right-12 w-[28rem] h-[28rem] bg-amber-200/40 rounded-full blur-3xl pointer-events-none animate-float-reverse"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-200/25 rounded-full blur-3xl pointer-events-none animate-float-slow"></div>
+      <div className="absolute -top-12 left-1/4 w-[34rem] h-[34rem] bg-purple-300/35 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-28 -right-12 w-[28rem] h-[28rem] bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-200/25 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -50,9 +47,9 @@ Project Details: ${notes.trim() || "Not specified"}`;
                ══════════════════════════════════════════════ */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Studio Pill Tag */}
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100/90 border border-purple-300/80 px-4 py-1.5 rounded-full w-fit mb-5 shadow-sm shadow-purple-500/10 hover:scale-105 transition-transform duration-300">
-              <span className="inline-block text-amber-500 animate-spin-slow">✦</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100/90 border border-purple-300/80 px-4 py-1.5 rounded-full w-fit mb-5 shadow-sm shadow-purple-500/10 transition-transform duration-300">
+              <span className="inline-block text-amber-500">✦</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
               <span>Digital Marketing & Web Development Studio • Mysuru</span>
             </div>
 
@@ -94,15 +91,18 @@ Project Details: ${notes.trim() || "Not specified"}`;
                 </h2>
                 <a href="#services" className="text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors flex items-center gap-1 group">
                   <span>View Details</span>
-                  <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  <span>&rarr;</span>
                 </a>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {/* Service 1 */}
-                <a href="#services" className="group p-4 rounded-2xl bg-white/95 hover:bg-white border border-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base font-bold mb-2.5 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all">
-                    💻
+                <a href="#services" className="group p-4 rounded-2xl bg-white/95 hover:bg-white border border-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all">
+                  <div className="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base font-bold mb-2.5 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="3" y="4" width="18" height="12" rx="2" />
+                      <path strokeLinecap="round" d="M8 20h8M12 16v4" />
+                    </svg>
                   </div>
                   <h3 className="text-sm font-bold text-[#180f2d] group-hover:text-purple-700 transition-colors font-display">
                     Custom Websites
@@ -113,9 +113,11 @@ Project Details: ${notes.trim() || "Not specified"}`;
                 </a>
 
                 {/* Service 2 */}
-                <a href="#services" className="group p-4 rounded-2xl bg-white/95 hover:bg-white border border-purple-100 hover:border-amber-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-base font-bold mb-2.5 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all">
-                    🚀
+                <a href="#services" className="group p-4 rounded-2xl bg-white/95 hover:bg-white border border-purple-100 hover:border-amber-300 shadow-sm hover:shadow-md transition-all">
+                  <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-base font-bold mb-2.5 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l6-6 4 4 8-8M15 7h6v6" />
+                    </svg>
                   </div>
                   <h3 className="text-sm font-bold text-[#180f2d] group-hover:text-amber-700 transition-colors font-display">
                     Digital Marketing & Ads
@@ -126,9 +128,13 @@ Project Details: ${notes.trim() || "Not specified"}`;
                 </a>
 
                 {/* Service 3 */}
-                <a href="#services" className="group p-4 rounded-2xl bg-white/95 hover:bg-white border border-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base font-bold mb-2.5 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all">
-                    🎨
+                <a href="#services" className="group p-4 rounded-2xl bg-white/95 hover:bg-white border border-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all">
+                  <div className="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-base font-bold mb-2.5 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="4" y="3" width="16" height="18" rx="2" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l5-5 4 4 2-2 5 5" />
+                      <circle cx="15" cy="8" r="1.5" />
+                    </svg>
                   </div>
                   <h3 className="text-sm font-bold text-[#180f2d] group-hover:text-purple-700 transition-colors font-display">
                     Posters & Visual Identity
@@ -145,8 +151,8 @@ Project Details: ${notes.trim() || "Not specified"}`;
                RIGHT COLUMN: Direct Quote Card
                ══════════════════════════════════════════════ */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <Card3DTilt maxTilt={8} glare={true} className="rounded-3xl">
-              <div id="quote-card" className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-purple-200/90 shadow-xl shadow-purple-600/10 relative overflow-hidden card-aesthetic-lift h-full">
+            <div className="rounded-3xl">
+              <div id="quote-card" className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-purple-200/90 shadow-xl shadow-purple-600/10 relative overflow-hidden h-full">
                 {/* Header accent line */}
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-600 via-amber-400 to-purple-600"></div>
 
@@ -156,7 +162,7 @@ Project Details: ${notes.trim() || "Not specified"}`;
                       Free Consultation
                     </span>
                     <span className="text-xs text-purple-700 font-bold flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                      <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                       Quick WhatsApp Response
                     </span>
                   </div>
@@ -250,7 +256,7 @@ Project Details: ${notes.trim() || "Not specified"}`;
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-600/25 transition-all transform hover:-translate-y-0.5 cursor-pointer font-display border border-emerald-300/40"
+                    className="w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center justify-center gap-2.5 transition-colors cursor-pointer font-display"
                   >
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
@@ -277,9 +283,12 @@ Project Details: ${notes.trim() || "Not specified"}`;
                   </div>
                 )}
               </div>
-            </Card3DTilt>
+            </div>
           </div>
         </div>
+
+        {/* Centered Intro Video Showcase */}
+        <IntroVideo />
       </div>
     </section>
   );
