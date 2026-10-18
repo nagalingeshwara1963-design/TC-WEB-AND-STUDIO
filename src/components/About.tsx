@@ -19,21 +19,21 @@ const POINTS = [
 
 const FOUNDERS = [
   {
-    name: "Naveen",
+    name: "Naveen N",
     role: "Cinematography & Editing",
     text: "Pre-wedding films, car delivery shoots, events, photography and video editing.",
     tags: ["Cinematography", "Pre-wedding", "Car delivery", "Editing"],
     photo: "naveen-face.jpg",
   },
   {
-    name: "Nidhith",
+    name: "Nidhith Sagar Gowda M",
     role: "Social Media & Design",
     text: "Poster design, content planning, brochures and ads, and business promotion.",
     tags: ["Posters", "Content planning", "Brochures & ads", "Promotion"],
     photo: "nidhith-face.jpg",
   },
   {
-    name: "Hemanth",
+    name: "Hemanth Gowda TN",
     role: "Web Design, Development & SEO",
     text: "Websites, SEO, content planning and client management.",
     tags: ["Websites", "SEO", "Content planning", "Client management"],

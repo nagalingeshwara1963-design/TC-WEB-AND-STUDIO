@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import WhatWeDo from "@/components/WhatWeDo";
 import Affordable from "@/components/Affordable";
 import Shoots from "@/components/Shoots";
 import Services from "@/components/Services";
@@ -21,6 +22,7 @@ export default function HomePage() {
 
       <main id="main-content" className="flex-grow">
         <Hero />
+        <WhatWeDo />
         <Affordable />
         <Shoots />
         <Services />

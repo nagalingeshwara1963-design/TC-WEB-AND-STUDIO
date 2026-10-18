@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import SectionHeading from "./SectionHeading";
+import { trackEvent } from "@/lib/analytics";
 import { InstagramIcon, MailIcon, PinIcon, WhatsAppIcon } from "./Icons";
 import { EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, SHOOT_TYPES, whatsappLink } from "@/lib/site";
 
@@ -66,6 +67,7 @@ export default function Contact() {
       `Details: ${notes.trim() || "None"}`,
     ].join("\n");
 
+    trackEvent("form-sent/whatsapp", "Enquiry form sent to WhatsApp");
     window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
   };
 

@@ -14,6 +14,10 @@ export const INSTAGRAM_HANDLE = "tc_web_and_studio";
 export const INSTAGRAM_URL = "https://www.instagram.com/tc_web_and_studio/";
 export const EMAIL = "tcworksmysore@gmail.com";
 
+// GoatCounter visit counter. Put your code here (e.g. "tcwebstudio" for tcwebstudio.goatcounter.com).
+// Leave empty to turn tracking off.
+export const GOATCOUNTER_CODE = "";
+
 // Full paths so the links also work from the service pages
 export const NAV_LINKS = [
   { href: `${BASE_PATH}/#shoots`, label: "Shoots" },

@@ -71,9 +71,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-12 pt-6 border-t border-white/10 text-xs text-purple-200/70">
-          © {year} TC Web &amp; Studio. All rights reserved.
-        </p>
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-purple-200/70">
+          <p>© {year} TC Web &amp; Studio. All rights reserved.</p>
+          <a href={`${BASE_PATH}/privacy/`} className="inline-flex items-center min-h-[36px] hover:text-white underline-offset-4 hover:underline">
+            Privacy policy
+          </a>
+        </div>
       </div>
     </footer>
   );

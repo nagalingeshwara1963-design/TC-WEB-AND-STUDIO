@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollRevealObserver from "@/components/ScrollRevealObserver";
+import Analytics from "@/components/Analytics";
 
 export const viewport: Viewport = {
   themeColor: "#faf8ff",
@@ -43,6 +44,11 @@ const BUSINESS_JSON_LD = {
     { "@type": "Country", name: "India" },
   ],
   sameAs: ["https://www.instagram.com/tc_web_and_studio/"],
+  founder: [
+    { "@type": "Person", name: "Naveen N", jobTitle: "Cinematography & Editing" },
+    { "@type": "Person", name: "Nidhith Sagar Gowda M", jobTitle: "Social Media & Design" },
+    { "@type": "Person", name: "Hemanth Gowda TN", jobTitle: "Web Design, Development & SEO" },
+  ],
   knowsAbout: [
     "Digital marketing",
     "Social media management",
@@ -118,6 +124,7 @@ export default function RootLayout({
         {children}
         <FloatingWhatsApp />
         <ScrollRevealObserver />
+        <Analytics />
       </body>
     </html>
   );
