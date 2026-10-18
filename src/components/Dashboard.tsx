@@ -6,7 +6,24 @@ import { BASE_PATH, GOATCOUNTER_CODE } from "@/lib/site";
 // ─── Data types (from the GoatCounter v0 API) ───
 type DayStat = { day: string; daily: number };
 type Hit = { path: string; title: string; count: number; event: boolean };
-type Stat = { name: string; count: number };
+type Stat = { name: string; count: number; id?: string };
+
+// GoatCounter sends screen sizes as codes without a display name
+const SIZE_NAMES: Record<string, string> = {
+  phone: "Phones",
+  largephone: "Large phones / small tablets",
+  tablet: "Tablets / small laptops",
+  desktop: "Computers",
+  desktophd: "Large computer screens",
+  unknown: "Unknown",
+};
+
+// Drop empty rows and fill in missing names
+function cleanStats(rows: Stat[], names?: Record<string, string>): Stat[] {
+  return rows
+    .filter((r) => r.count > 0)
+    .map((r) => ({ ...r, name: (names && r.id && names[r.id]) || r.name || (r.id && names?.[r.id]) || "Unknown" }));
+}
 type Data = {
   total: number;
   totalEvents: number;
@@ -41,11 +58,12 @@ function saveKey(key: string) {
 
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-// GoatCounter wants hour-rounded UTC times
+// GoatCounter wants hour-rounded UTC times. The end must be the end of today (UTC):
+// ending at the current hour returns empty results.
 function rangeTimes(days: number) {
   const end = new Date();
-  end.setUTCMinutes(0, 0, 0);
-  end.setUTCHours(end.getUTCHours() + 1);
+  end.setUTCHours(0, 0, 0, 0);
+  end.setUTCDate(end.getUTCDate() + 1);
   const start = new Date();
   start.setUTCHours(0, 0, 0, 0);
   start.setUTCDate(start.getUTCDate() - (days - 1));
@@ -85,13 +103,16 @@ async function loadData(key: string, days: number): Promise<Data> {
   return {
     total: total.total || 0,
     totalEvents: total.total_events || 0,
-    days: (total.stats || []).map((d) => ({ day: d.day, daily: d.daily || 0 })),
+    // The end-of-day range also returns tomorrow (empty), so keep days up to today only
+    days: (total.stats || [])
+      .filter((d) => d.day <= new Date().toISOString().slice(0, 10))
+      .map((d) => ({ day: d.day, daily: d.daily || 0 })),
     hits: hits.hits || [],
-    refs,
-    sizes,
-    systems,
-    browsers,
-    locations,
+    refs: refs.filter((r) => r.count > 0),
+    sizes: cleanStats(sizes, SIZE_NAMES),
+    systems: cleanStats(systems),
+    browsers: cleanStats(browsers),
+    locations: cleanStats(locations),
   };
 }
 
