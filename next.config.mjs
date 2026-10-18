@@ -1,15 +1,13 @@
 /** @type {import('next').NextConfig} */
-const basePath = "/TC-WEB-AND-STUDIO";
-
 const nextConfig = {
   reactStrictMode: true,
-  // Static export for GitHub Pages (served from /TC-WEB-AND-STUDIO)
+  // Static export for GitHub Pages on the custom domain tcwebandstudio.in (served from the root)
   output: "export",
-  basePath,
   trailingSlash: true,
   images: { unoptimized: true },
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
+    // Empty now that the site is served from the domain root
+    NEXT_PUBLIC_BASE_PATH: "",
   },
 };
 

@@ -8,7 +8,7 @@ export function whatsappLink(message: string = DEFAULT_WA_MESSAGE) {
 }
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-export const SITE_ORIGIN = "https://nagalingeshwara1963-design.github.io";
+export const SITE_ORIGIN = "https://tcwebandstudio.in";
 
 export const INSTAGRAM_HANDLE = "tc_web_and_studio";
 export const INSTAGRAM_URL = "https://www.instagram.com/tc_web_and_studio/";

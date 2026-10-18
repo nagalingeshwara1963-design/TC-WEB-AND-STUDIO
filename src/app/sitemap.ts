@@ -4,7 +4,7 @@ import { SERVICE_PAGES } from "@/lib/servicePages";
 export const dynamic = "force-static";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const ROOT = `https://nagalingeshwara1963-design.github.io${BASE}`;
+const ROOT = `https://tcwebandstudio.in${BASE}`;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

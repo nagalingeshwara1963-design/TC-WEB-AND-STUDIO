@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 };
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH;
-const SITE_URL = `https://nagalingeshwara1963-design.github.io${BASE}/`;
+const SITE_URL = `https://tcwebandstudio.in${BASE}/`;
 const TITLE = "Affordable Digital Marketing in Mysore | TC Web & Studio";
 const DESCRIPTION =
   "Affordable digital marketing in Mysore: reels, pre-wedding and event shoots, car delivery videos, social media, posters, websites, SEO and Meta & Google ads for startups, businesses and personal brands.";
@@ -29,8 +29,8 @@ const BUSINESS_JSON_LD = {
   slogan: "Your budget. Our creativity.",
   description: DESCRIPTION,
   url: SITE_URL,
-  logo: `https://nagalingeshwara1963-design.github.io${BASE}/icon-512.png`,
-  image: `https://nagalingeshwara1963-design.github.io${SHARE_IMAGE}`,
+  logo: `https://tcwebandstudio.in${BASE}/icon-512.png`,
+  image: `https://tcwebandstudio.in${SHARE_IMAGE}`,
   email: "tcworksmysore@gmail.com",
   address: {
     "@type": "PostalAddress",
@@ -65,7 +65,7 @@ const BUSINESS_JSON_LD = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nagalingeshwara1963-design.github.io"),
+  metadataBase: new URL("https://tcwebandstudio.in"),
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
