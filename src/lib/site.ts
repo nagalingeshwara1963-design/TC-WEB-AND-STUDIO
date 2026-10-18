@@ -16,7 +16,7 @@ export const EMAIL = "tcworksmysore@gmail.com";
 
 // GoatCounter visit counter. Put your code here (e.g. "tcwebstudio" for tcwebstudio.goatcounter.com).
 // Leave empty to turn tracking off.
-export const GOATCOUNTER_CODE = "";
+export const GOATCOUNTER_CODE = "tcwebandstudio";
 
 // Full paths so the links also work from the service pages
 export const NAV_LINKS = [
