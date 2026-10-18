@@ -2,10 +2,16 @@
 
 import React, { useEffect, useState } from "react";
 import { WhatsAppIcon } from "./Icons";
-import { whatsappLink } from "@/lib/site";
+import { BASE_PATH, whatsappLink } from "@/lib/site";
 
 export default function FloatingWhatsApp() {
   const [hidden, setHidden] = useState(false);
+  const [onDashboard, setOnDashboard] = useState(false);
+
+  // Not shown on the private dashboard page
+  useEffect(() => {
+    setOnDashboard(window.location.pathname.startsWith(`${BASE_PATH}/dashboard`));
+  }, []);
 
   // Hide while the contact section is on screen
   useEffect(() => {
@@ -15,6 +21,8 @@ export default function FloatingWhatsApp() {
     observer.observe(contact);
     return () => observer.disconnect();
   }, []);
+
+  if (onDashboard) return null;
 
   return (
     <a
