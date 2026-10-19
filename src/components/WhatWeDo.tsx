@@ -1,6 +1,7 @@
 import React from "react";
 import SectionHeading from "./SectionHeading";
-import { BASE_PATH } from "@/lib/site";
+import { BASE_PATH, whatsappLink } from "@/lib/site";
+import { WhatsAppIcon } from "./Icons";
 
 const ITEMS = [
   {
@@ -12,7 +13,7 @@ const ITEMS = [
   {
     title: "Social media handling",
     text: "Content planning, posting and page management for Instagram and Facebook.",
-    href: `${BASE_PATH}/#services`,
+    href: `${BASE_PATH}/social-media-marketing-mysore/`,
     icon: (
       <>
         <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -35,7 +36,7 @@ const ITEMS = [
   {
     title: "Website development",
     text: "Fast, mobile-friendly websites and landing pages built for your business.",
-    href: `${BASE_PATH}/#services`,
+    href: `${BASE_PATH}/website-design-mysore/`,
     icon: (
       <>
         <rect x="3" y="4" width="18" height="13" rx="2" />
@@ -46,7 +47,7 @@ const ITEMS = [
   {
     title: "SEO",
     text: "Get found on Google Search and Maps when people in Mysore look for you.",
-    href: `${BASE_PATH}/#services`,
+    href: `${BASE_PATH}/seo-services-mysore/`,
     icon: (
       <>
         <circle cx="11" cy="11" r="6.5" />
@@ -85,6 +86,23 @@ export default function WhatWeDo() {
             </li>
           ))}
         </ul>
+
+        {/* Demo request (from the ad: "DM for queries & a demo video") */}
+        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-purple-50 border border-purple-200 reveal-on-scroll">
+          <p className="text-base text-[#2e2446]">
+            <span className="font-bold font-display text-[#180f2d]">Not sure what you need?</span> Ask us for sample work for your type
+            of business.
+          </p>
+          <a
+            href={whatsappLink("Hi! Can you share a demo / sample of your work for my business?")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold font-display transition-colors w-full sm:w-auto shrink-0"
+          >
+            <WhatsAppIcon className="w-5 h-5" />
+            Ask for a demo video
+          </a>
+        </div>
       </div>
     </section>
   );

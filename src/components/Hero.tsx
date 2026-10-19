@@ -1,7 +1,15 @@
 import React from "react";
 import IntroVideo from "./IntroVideo";
 import { WhatsAppIcon } from "./Icons";
-import { whatsappLink } from "@/lib/site";
+import { BASE_PATH, whatsappLink } from "@/lib/site";
+
+const TRUST_LOGOS = [
+  { name: "Jain Autocars", file: "jain-autocars.webp" },
+  { name: "Saaraswath IAS/KAS Academy", file: "saaraswath.webp" },
+  { name: "Soulfull Learning", file: "soulfull.webp" },
+  { name: "Samvruddhi Housing Loans", file: "samvruddhi.webp" },
+  { name: "Darjeeling Momos", file: "darjeeling-momos.webp" },
+];
 
 export default function Hero() {
   return (
@@ -21,8 +29,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-base sm:text-lg text-[#43395b] leading-relaxed mb-7 max-w-2xl mx-auto">
-            Reels, shoots, posters, social media, websites and ads for startups, growing businesses and personal brands. Three
-            founders in Mysore, one team for everything.
+            We help businesses build a stronger digital presence through strategic content, social media management, websites and
+            digital marketing. Three founders in Mysore, one team for everything.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3">
@@ -41,6 +49,32 @@ export default function Hero() {
             >
               Get a quote
             </a>
+          </div>
+
+          {/* Mini trust strip */}
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <p className="text-sm font-semibold text-[#5e5377]">Trusted by local brands</p>
+            <div className="flex items-center justify-center gap-4">
+            <ul className="flex items-center -space-x-2">
+              {TRUST_LOGOS.map((c) => (
+                <li key={c.file} className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-white border-2 border-white shadow-sm ring-1 ring-purple-200">
+                  <img
+                    src={`${BASE_PATH}/images/clients/${c.file}`}
+                    alt={c.name}
+                    title={c.name}
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                </li>
+              ))}
+            </ul>
+            <a href="#clients" className="text-sm font-bold text-purple-800 hover:text-purple-600 underline-offset-4 hover:underline">
+              See all clients
+            </a>
+            </div>
           </div>
         </div>
 

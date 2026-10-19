@@ -17,6 +17,7 @@ const SERVICES = [
     title: "Social media management",
     text: "Content planning, captions and page management for Instagram and Facebook.",
     tags: ["Content calendar", "Captions", "Page management"],
+    slug: "social-media-marketing-mysore",
   },
   {
     title: "Posters & branding",
@@ -33,16 +34,19 @@ const SERVICES = [
     title: "Websites",
     text: "Fast, mobile-friendly websites and landing pages built for your business.",
     tags: ["Business sites", "Landing pages", "Domain & hosting"],
+    slug: "website-design-mysore",
   },
   {
     title: "SEO",
     text: "Help customers find you on Google, with on-page SEO and Google Business Profile.",
     tags: ["On-page SEO", "Google Business Profile"],
+    slug: "seo-services-mysore",
   },
   {
     title: "Personal brand profiles",
     text: "Profile videos, photos and pages for doctors, entrepreneurs, consultants and creators.",
     tags: ["Profile video", "Portfolio", "LinkedIn & Instagram"],
+    slug: "doctor-personal-branding-mysore",
   },
 ];
 

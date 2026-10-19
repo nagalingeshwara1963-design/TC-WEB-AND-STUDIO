@@ -201,6 +201,187 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     waMessage: "Hi! I'd like to book a car / bike delivery shoot in Mysore.",
     serviceType: "Car delivery photography and videography",
   },
+  {
+    slug: "website-design-mysore",
+    navLabel: "Website design in Mysore",
+    metaTitle: "Website Design in Mysore | Affordable Business Websites & Landing Pages",
+    metaDescription:
+      "Affordable website design and development in Mysore. Fast, mobile-friendly business websites and landing pages with basic SEO, built by TC Web & Studio.",
+    eyebrow: "Website design · Mysore",
+    h1: "Website design in Mysore",
+    intro: [
+      "Your website is often the first place customers check before they call or message you. We design and build fast, mobile-friendly websites for businesses and professionals in Mysore that look good, load quickly and make it easy to contact you.",
+      "Every site comes with basic on-page SEO, WhatsApp and call-to-action buttons, and a layout that works on every phone. We can also handle your domain and hosting, so you don't have to deal with the technical side.",
+    ],
+    includesTitle: "What's included",
+    includes: [
+      { title: "Business websites", text: "A clear, professional site that explains what you do and how to reach you." },
+      { title: "Landing pages", text: "Single pages built for an ad campaign, an offer or a launch." },
+      { title: "Mobile-first design", text: "Looks and works great on phones, where most of your visitors are." },
+      { title: "Basic on-page SEO", text: "Titles, descriptions and structure set up so Google can understand your site." },
+      { title: "WhatsApp & enquiry forms", text: "Easy ways for visitors to contact you straight from the page." },
+      { title: "Domain & hosting help", text: "We help you buy a domain and get the site live." },
+    ],
+    idealForTitle: "Who it's for",
+    idealFor: ["Shops and restaurants", "Clinics and doctors", "Coaching centres and schools", "Real estate and dealers", "Startups and new brands", "Consultants and freelancers"],
+    faqs: [
+      {
+        q: "How much does a website cost in Mysore?",
+        a: "It depends on the number of pages and features. Tell us what you need and your budget on WhatsApp, and we'll quote honestly.",
+      },
+      {
+        q: "How long does a website take?",
+        a: "It depends on the size of the site and how quickly content is ready. We agree a clear timeline in the plan before we start.",
+      },
+      {
+        q: "Will my website show up on Google?",
+        a: "Every site comes with basic on-page SEO so Google can read it. Ranking higher for competitive searches takes ongoing SEO work, which we quote separately.",
+      },
+      {
+        q: "Can I update the website later?",
+        a: "Yes. Message us whenever you need changes, and we'll update it for you.",
+      },
+    ],
+    waMessage: "Hi! I'd like a website for my business in Mysore.",
+    serviceType: "Website design and development",
+  },
+  {
+    slug: "social-media-marketing-mysore",
+    navLabel: "Social media marketing in Mysore",
+    metaTitle: "Social Media Marketing in Mysore | Instagram & Facebook Management",
+    metaDescription:
+      "Affordable social media marketing in Mysore. Content planning, posters, reels, captions and Instagram & Facebook page management by TC Web & Studio.",
+    eyebrow: "Social media · Mysore",
+    h1: "Social media marketing in Mysore",
+    intro: [
+      "Posting regularly with good-looking content is one of the easiest ways for a local business to stay in front of customers. We plan, create and post your content, so your Instagram and Facebook pages stay active and look professional.",
+      "Because we design the posters and shoot the reels ourselves, everything matches your brand. And when you want more reach, we can run Meta ads on top of your regular posts.",
+    ],
+    includesTitle: "What we handle",
+    includes: [
+      { title: "Content calendar", text: "A monthly plan of what to post and when." },
+      { title: "Posters & creatives", text: "Festival posts, offers and announcements designed in your brand style." },
+      { title: "Reels", text: "Short videos shot and edited in-house, made for Instagram." },
+      { title: "Captions & hashtags", text: "Clear, local captions written for your audience." },
+      { title: "Page management", text: "Posting on Instagram and Facebook so your pages stay active." },
+      { title: "Meta ads (optional)", text: "Paid campaigns for more reach, enquiries and WhatsApp messages." },
+    ],
+    idealForTitle: "Who it's for",
+    idealFor: ["Restaurants and cafés", "Shops and boutiques", "Coaching centres", "Car and bike dealers", "Clinics and doctors", "Personal brands"],
+    faqs: [
+      {
+        q: "How much does social media management cost in Mysore?",
+        a: "It depends on how many posts and reels you want each month. Tell us your goal and budget, and we'll suggest a plan that fits.",
+      },
+      {
+        q: "Do you shoot the reels too?",
+        a: "Yes. We plan, shoot and edit reels in-house, so your content matches your brand.",
+      },
+      {
+        q: "Is ad spend included?",
+        a: "No. Your ad budget is paid directly by you to Meta. Our fee covers the content and managing the campaigns.",
+      },
+      {
+        q: "Will you post for us, or just make the content?",
+        a: "Either. We can handle posting and page management fully, or hand over the content for you to post.",
+      },
+    ],
+    waMessage: "Hi! I'd like social media management for my business in Mysore.",
+    serviceType: "Social media marketing",
+  },
+  {
+    slug: "seo-services-mysore",
+    navLabel: "SEO services in Mysore",
+    metaTitle: "SEO Services in Mysore | Get Found on Google Search & Maps",
+    metaDescription:
+      "Affordable SEO services in Mysore. On-page SEO, Google Business Profile setup and local SEO to help customers find your business on Google, by TC Web & Studio.",
+    eyebrow: "SEO · Mysore",
+    h1: "SEO services in Mysore",
+    intro: [
+      "When people in Mysore search for a business like yours, you want to be one of the first names they see. SEO (search engine optimisation) is the work that helps Google understand your business and show it to the right people.",
+      "We focus on what matters most for local businesses: a well-built website, a complete Google Business Profile, and steady work over time. We'll be honest: SEO takes months, not days, and nobody can guarantee the number one spot.",
+    ],
+    includesTitle: "What our SEO covers",
+    includes: [
+      { title: "On-page SEO", text: "Titles, descriptions, headings and content set up around what customers search." },
+      { title: "Google Business Profile", text: "Setup and optimisation so you show up on Google Maps and local results." },
+      { title: "Local SEO", text: "Consistent business details across directories and listings." },
+      { title: "Service pages", text: "Dedicated pages for your main services and areas." },
+      { title: "Technical checks", text: "Speed, mobile-friendliness, sitemaps and Search Console setup." },
+      { title: "Reviews strategy", text: "Simple ways to get more genuine Google reviews from happy customers." },
+    ],
+    idealForTitle: "Who it's for",
+    idealFor: ["Clinics and doctors", "Shops and restaurants", "Coaching centres", "Real estate", "Service businesses", "New websites"],
+    faqs: [
+      {
+        q: "How long does SEO take to work?",
+        a: "Usually a few months for steady results, depending on how competitive your searches are. Anyone promising instant rankings isn't being honest.",
+      },
+      {
+        q: "Can you guarantee the first position on Google?",
+        a: "No one can guarantee that, because Google decides rankings. We do the work that gives you the best chance, and keep improving it.",
+      },
+      {
+        q: "Is basic SEO included with a website?",
+        a: "Yes. Basic on-page SEO comes with every website we build. Ongoing SEO work is quoted separately.",
+      },
+      {
+        q: "What is a Google Business Profile?",
+        a: "It's your free business listing on Google Search and Maps. A complete profile with reviews is one of the most important things for local searches.",
+      },
+    ],
+    waMessage: "Hi! I'd like to know about SEO for my business in Mysore.",
+    serviceType: "Search engine optimisation",
+  },
+  {
+    slug: "doctor-personal-branding-mysore",
+    navLabel: "Personal branding for doctors in Mysore",
+    metaTitle: "Personal Branding for Doctors in Mysore | Profile Videos & Social Media",
+    metaDescription:
+      "Personal branding for doctors, dentists and clinics in Mysore: profile videos, photos, awareness content and social media, done responsibly by TC Web & Studio.",
+    eyebrow: "Doctors & clinics · Mysore",
+    h1: "Personal branding for doctors in Mysore",
+    intro: [
+      "Patients look up doctors online before they book. A clear profile, a short introduction video and helpful awareness posts build trust before the first visit. We create that content for doctors, dentists and clinics in Mysore.",
+      "Healthcare content needs extra care. We work consent-first, make no misleading claims, get every post approved by you before it goes live, and follow the National Medical Commission's advertising guidelines.",
+    ],
+    includesTitle: "What we create",
+    includes: [
+      { title: "Doctor profile video", text: "A short, professional introduction to you and your practice." },
+      { title: "Profile photos", text: "Clean, trustworthy photos for your website, Google and social media." },
+      { title: "Awareness posts & reels", text: "Helpful health information explained simply, approved by you." },
+      { title: "Clinic tour video", text: "Show patients your clinic before they visit." },
+      { title: "Social media management", text: "Regular, responsible posting on Instagram and Facebook." },
+      { title: "Website & Google profile", text: "A simple website and a complete Google Business Profile." },
+    ],
+    idealForTitle: "Our promise",
+    idealFor: [
+      "No patient filmed without written consent",
+      "No misleading claims or before/after posts",
+      "Every post approved by the doctor",
+      "Follows NMC advertising guidelines",
+    ],
+    faqs: [
+      {
+        q: "Is it allowed for doctors to promote themselves online?",
+        a: "Doctors can share factual information and health awareness content. We follow the National Medical Commission's advertising guidelines and avoid anything misleading.",
+      },
+      {
+        q: "Will you film patients?",
+        a: "Only with written consent, and never in a way that shares private details. Many doctors choose content without patients at all.",
+      },
+      {
+        q: "Do I need to approve the content?",
+        a: "Yes. Every post and video is checked and approved by you before it goes live.",
+      },
+      {
+        q: "Do you work with hospitals and clinics too?",
+        a: "Yes. We work with individual doctors, dentists, clinics and hospitals.",
+      },
+    ],
+    waMessage: "Hi! I'm a doctor in Mysore and I'd like to know about personal branding.",
+    serviceType: "Personal branding for doctors",
+  },
 ];
 
 export function getServicePage(slug: string) {

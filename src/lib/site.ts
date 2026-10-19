@@ -20,9 +20,9 @@ export const GOATCOUNTER_CODE = "tcwebandstudio";
 
 // Full paths so the links also work from the service pages
 export const NAV_LINKS = [
-  { href: `${BASE_PATH}/#shoots`, label: "Shoots" },
   { href: `${BASE_PATH}/#services`, label: "Services" },
-  { href: `${BASE_PATH}/#who-we-work-with`, label: "Who we work with" },
+  { href: `${BASE_PATH}/#shoots`, label: "Shoots" },
+  { href: `${BASE_PATH}/#clients`, label: "Clients" },
   { href: `${BASE_PATH}/#about`, label: "About" },
   { href: `${BASE_PATH}/#pricing`, label: "Pricing" },
   { href: `${BASE_PATH}/#faq`, label: "FAQ" },

@@ -2,13 +2,13 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WhatWeDo from "@/components/WhatWeDo";
-import Affordable from "@/components/Affordable";
-import Shoots from "@/components/Shoots";
-import Services from "@/components/Services";
 import WhoWeWorkWith from "@/components/WhoWeWorkWith";
 import Clients from "@/components/Clients";
+import Affordable from "@/components/Affordable";
+import Services from "@/components/Services";
+import Shoots from "@/components/Shoots";
 import About from "@/components/About";
-import HowWeWork from "@/components/HowWeWork";
+import Founders from "@/components/Founders";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import InstagramBlock from "@/components/InstagramBlock";
@@ -23,13 +23,13 @@ export default function HomePage() {
       <main id="main-content" className="flex-grow">
         <Hero />
         <WhatWeDo />
-        <Affordable />
-        <Shoots />
-        <Services />
         <WhoWeWorkWith />
         <Clients />
+        <Affordable />
+        <Services />
+        <Shoots />
         <About />
-        <HowWeWork />
+        <Founders />
         <Pricing />
         <FAQ />
         <InstagramBlock />
