@@ -83,8 +83,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   icons: {
     icon: [
+      // Google needs square favicons in multiples of 48px
       { url: `${BASE}/favicon.ico`, sizes: "48x48" },
-      { url: `${BASE}/icon-512.png`, type: "image/png", sizes: "512x512" },
+      { url: `${BASE}/icon-96.png`, type: "image/png", sizes: "96x96" },
+      { url: `${BASE}/icon-192.png`, type: "image/png", sizes: "192x192" },
     ],
     apple: `${BASE}/apple-touch-icon.png`,
   },
