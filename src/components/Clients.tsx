@@ -11,7 +11,7 @@ const CLIENTS = [
   { name: "Soulfull Learning", file: "soulfull.webp" },
   { name: "Samvruddhi Housing Loans", file: "samvruddhi.webp" },
   { name: "Darjeeling Momos", file: "darjeeling-momos.webp" },
-  { name: "Vinutha Flower Decorations", file: "vinutha.webp" },
+  { name: "RRVV Enterprises", file: "rrvv-enterprises.webp" },
 ];
 
 // Copies of the list so the row can loop seamlessly on wide screens
