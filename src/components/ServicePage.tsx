@@ -117,7 +117,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
               </ul>
             </div>
             <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#2a1650] to-[#1c1335] text-white">
-              <h2 className="text-2xl font-extrabold font-display mb-3">Why we cost less, and still look great</h2>
+              <h2 className="text-2xl font-extrabold font-display text-white mb-3">Why we cost less, and still look great</h2>
               <p className="text-purple-100/85 leading-relaxed">
                 No big crews or fancy offices. Just three skilled founders in Mysore who plan, shoot and design everything
                 themselves. Low production cost, no compromise on quality.
